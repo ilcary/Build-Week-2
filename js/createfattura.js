@@ -42,33 +42,29 @@ class Indirizzo {
     }
 }
 
-class Fatture extends Indirizzo {
-    constructor(__address, __country, __city, __zip, __username, __btd, __firstname, __lastname, __email , __fiscalcode, __purpose, __dateofbill, __amount,__piva) {
-        super(__username,__btd, __firstname, __lastname, __email, __fiscalcode, __purpose, __dateofbill, __amount,__piva)
-        this.username = __username
-        this.btd = __btd
-        this.firstname = __firstname
-        this.lastname = __lastname
-        this.email = __email
+class Fatture {
+    constructor(__fiscalcode, __purpose, __dateofbill, __amount, __piva,__userId) {
         this.fiscalcode = __fiscalcode
         this.purpose = __purpose
         this.dateofbill = __dateofbill
         this.amount = __amount
         this.piva = __piva
+        this.userId = __userId
         this.getIntestazione()
     }
-    getIntestazione() {
-        this.username = document.querySelector('#username').value
-        this.btd = document.querySelector('#btd').value
-        this.firstname = document.querySelector('#firstname').value
-        this.lastname = document.querySelector('#lastname').value
-        this.email = document.querySelector('#email').value
-        this.fiscalcode = document.querySelector('#fiscalcode').value
-        this.purpose = document.querySelector('#purpose').value
-        this.dateofbill = document.querySelector('#dateofbill').value
-        this.amount = document.querySelector('#amount').value
-        this.piva = document.querySelector('#piva').value
-    }
+
+getIntestazione() {
+    this.username = document.querySelector('#username').value
+    this.btd = document.querySelector('#btd').value
+    this.firstname = document.querySelector('#firstname').value
+    this.lastname = document.querySelector('#lastname').value
+    this.email = document.querySelector('#email').value
+    this.fiscalcode = document.querySelector('#fiscalcode').value
+    this.purpose = document.querySelector('#purpose').value
+    this.dateofbill = document.querySelector('#dateofbill').value
+    this.amount = document.querySelector('#amount').value
+    this.piva = document.querySelector('#piva').value
+}
 }
 
 //AGGIUNGI PREZZO////////////////////////////////////////
@@ -76,7 +72,7 @@ class Fatture extends Indirizzo {
 button.addEventListener('click', function (e) {
     e.preventDefault();
 
-    let fattura = new Fatture(address, country, city, zip, username, btd, firstname, lastname, email, fiscalcode, purpose, dateofbill, amount, piva);
+    let fattura = new Fatture(fiscalcode, purpose, dateofbill, amount, piva,userId);
     console.log(fattura)
 
     let options = {

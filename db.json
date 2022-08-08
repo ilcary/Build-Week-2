@@ -112,6 +112,20 @@
       "amount": "6669 $",
       "piva": "yetjetyykj6598664164",
       "id": 5
+    },
+    {
+      "fiscalcode": "DGMCRS01P30A515R",
+      "purpose": "1kg di sardine del mar Caspio",
+      "dateofbill": "2022-08-08",
+      "amount": "1125 $",
+      "piva": "yetjetyykj6598664164",
+      "userId": "3",
+      "username": "Francy",
+      "btd": "1800-02-18",
+      "firstname": "Francesca",
+      "lastname": "Frattini",
+      "email": "frafratt123@hotmail.it",
+      "id": 6
     }
   ]
 }
