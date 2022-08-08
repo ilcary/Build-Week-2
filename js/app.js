@@ -35,6 +35,7 @@ class Carta {
         this.takeClassAndWrite(card, '.card li:nth-child(4)', `@email:  ${this.email}`)
         card.querySelector('.card-img-top').src = this.profileURL
         card.querySelector('#modifica').href = `mod.html?id=${this.id}`
+        card.querySelector('#fattura').href = `creafattura.html?id=${this.id}`
         card.querySelector('#elimina').addEventListener('click',()=>{
 
             swal({
