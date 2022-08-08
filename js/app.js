@@ -4,9 +4,9 @@ const display = document.querySelector('#display')
 
 
 class Carta {
-    constructor(__username, __bio, __firstname, __lastname, __gender, __email, __profileURL,__id) {
+    constructor(__username, __btd, __firstname, __lastname, __gender, __email, __profileURL,__id) {
         this.username = __username;
-        this.bio = __bio;
+        this.btd = __btd;
         this.firstname = __firstname;
         this.lastname = __lastname;
         this.gender = __gender;
@@ -28,11 +28,11 @@ class Carta {
         console.log(this.username)
         console.log(this.id)
         this.takeClassAndWrite(card, '.card .card-title', `Nickname:  ${this.username}`)
-        this.takeClassAndWrite(card, '.card-text', `About me:  ${this.bio}`)
         this.takeClassAndWrite(card, '.card ul > li', `First name:  ${this.firstname}`)
         this.takeClassAndWrite(card, '.card li:nth-child(2)', `Last name:  ${this.lastname}`)
         this.takeClassAndWrite(card, '.card li:nth-child(3)', `Gender:  ${this.gender}`)
         this.takeClassAndWrite(card, '.card li:nth-child(4)', `@email:  ${this.email}`)
+        this.takeClassAndWrite(card, '.card li:nth-child(5)', `Birthday:  ${this.btd}`)
         card.querySelector('.card-img-top').src = this.profileURL
         card.querySelector('#modifica').href = `mod.html?id=${this.id}`
         card.querySelector('#fattura').href = `creafattura.html?id=${this.id}`
@@ -65,7 +65,7 @@ fetch(api_url)//make the call
     .then(utenti => {//now i've the data i can do what i want
         console.log(utenti);
         for (let utente of utenti) {
-            let card = new Carta(utente.username, utente.bio, utente.firstname, utente.lastname, utente.gender, utente.email, utente.profileURL,utente.id)
+            let card = new Carta(utente.username, utente.btd, utente.firstname, utente.lastname, utente.gender, utente.email, utente.profileURL,utente.id)
         }
     })
 

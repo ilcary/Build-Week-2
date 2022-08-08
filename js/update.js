@@ -9,9 +9,9 @@ let userId = params.get('id');
 let button = document.querySelector('#update');
 
 class Utente {
-    constructor(__username, __bio, __firstname, __lastname, __gender, __email, __profileURL) {
+    constructor(__username, __btd, __firstname, __lastname, __gender, __email, __profileURL) {
         this.username = __username;
-        this.bio = __bio;
+        this.btd = __btd;
         this.firstname = __firstname;
         this.lastname = __lastname;
         this.gender = __gender;
@@ -22,7 +22,7 @@ class Utente {
     }
     takeForm() {
         this.username = document.querySelector('#username').value
-        this.bio = document.querySelector('#bio').value
+        this.btd = document.querySelector('#btd').value
         this.firstname = document.querySelector('#firstname').value
         this.lastname = document.querySelector('#lastname').value
         this.gender = document.querySelector('#gender').value
@@ -45,7 +45,7 @@ fetch(apiUtenti + '/' + userId)
     .then(data => {
 
         this.username = document.querySelector('#username').value = data.username
-        this.bio = document.querySelector('#bio').value = data.bio
+        this.btd = document.querySelector('#btd').value = data.btd
         this.firstname = document.querySelector('#firstname').value = data.firstname
         this.lastname = document.querySelector('#lastname').value = data.lastname
         this.gender = document.querySelector('#gender').value = data.gender
@@ -59,7 +59,7 @@ fetch(apiUtenti + '/' + userId)
 button.addEventListener('click', function (e) {
     e.preventDefault();
 
-    let user = new Utente(username, bio, firstname, lastname, gender, email);
+    let user = new Utente(username, btd, firstname, lastname, gender, email);
 
     let options = {
         method: 'PUT',

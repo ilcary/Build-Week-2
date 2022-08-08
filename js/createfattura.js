@@ -6,11 +6,11 @@ if (!params.has('id')) {
 let userId = params.get('id');
 
 const apiUtenti = 'http://localhost:3000/utenti';
-const apiUtentiFatture = 'http://localhost:3000/utenti/' + userId +'/fatture';
-
-
+const apiUtentiFatture = 'http://localhost:3000/fatture';
 
 let button = document.querySelector('#creafattura');
+
+
 
 
 fetch(apiUtenti + '/' + userId)
@@ -21,6 +21,8 @@ fetch(apiUtenti + '/' + userId)
         document.querySelector('#firstname').value = data.firstname
         document.querySelector('#lastname').value = data.lastname
         document.querySelector('#email').value = data.email
+        document.querySelector('#btd').value = data.btd
+        document.querySelector('#amount').value = Math.floor(Math.random() * 10000) + ' $'
 
     })
 
@@ -41,35 +43,40 @@ class Indirizzo {
 }
 
 class Fatture extends Indirizzo {
-    constructor(__address, __country, __city, __zip,__username, __firstname, __lastname, __email) {
-        super(__username, __firstname, __lastname, __email)
+    constructor(__address, __country, __city, __zip, __username, __btd, __firstname, __lastname, __email , __fiscalcode, __purpose, __dateofbill, __amount,__piva) {
+        super(__username,__btd, __firstname, __lastname, __email, __fiscalcode, __purpose, __dateofbill, __amount,__piva)
         this.username = __username
+        this.btd = __btd
         this.firstname = __firstname
         this.lastname = __lastname
         this.email = __email
+        this.fiscalcode = __fiscalcode
+        this.purpose = __purpose
+        this.dateofbill = __dateofbill
+        this.amount = __amount
+        this.piva = __piva
         this.getIntestazione()
     }
-    getIntestazione(){
+    getIntestazione() {
         this.username = document.querySelector('#username').value
+        this.btd = document.querySelector('#btd').value
         this.firstname = document.querySelector('#firstname').value
         this.lastname = document.querySelector('#lastname').value
         this.email = document.querySelector('#email').value
+        this.fiscalcode = document.querySelector('#fiscalcode').value
+        this.purpose = document.querySelector('#purpose').value
+        this.dateofbill = document.querySelector('#dateofbill').value
+        this.amount = document.querySelector('#amount').value
+        this.piva = document.querySelector('#piva').value
     }
 }
 
-indirizzoSalvato= localStorage.getItem('indirizzoSalvato') ? JSON.parse(localStorage.getItem('indirizzoSalvato')) : [];
-
+//AGGIUNGI PREZZO////////////////////////////////////////
 
 button.addEventListener('click', function (e) {
     e.preventDefault();
 
-    let indirizzoS = new Indirizzo(address, country, city, zip)
-
-    indirizzoSalvato.push(indirizzoS)
-    let strindirizzoSalvato = JSON.stringify(indirizzoSalvato)
-    localStorage.setItem('indirizzoSalvato',strindirizzoSalvato)
-
-    let fattura = new Fatture(address, country, city, zip, username, firstname, lastname, email);
+    let fattura = new Fatture(address, country, city, zip, username, btd, firstname, lastname, email, fiscalcode, purpose, dateofbill, amount, piva);
     console.log(fattura)
 
     let options = {
@@ -80,16 +87,16 @@ button.addEventListener('click', function (e) {
         }
     }
 
-    fetch(apiUtenti+'/'+userId+'?fatture', options)//
+    fetch(apiUtentiFatture, options)//
         .then(res => res.json())
         .then(res => {
             swal({
                 position: 'top-end',
                 icon: 'success',
                 title: 'Order sent!',
-                text: `Dear ${res.firstname} ${res.lastname} with id: ${res.id} your order has been correctly sent!`,
+                text: `Dear ${res.firstname} ${res.lastname} with id: ${res.id} your order for ${res.purpose} has been correctly sent!`,
                 showConfirmButton: false,
-                timer: 5000
-            })/* .then(() => location.href = 'index.html') */
+                timer: 6000
+            }).then(() => location.href = 'index.html')
         })
 })
