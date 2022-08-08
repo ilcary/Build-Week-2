@@ -54,11 +54,6 @@ class Fatture {
     }
 
 getIntestazione() {
-    this.username = document.querySelector('#username').value
-    this.btd = document.querySelector('#btd').value
-    this.firstname = document.querySelector('#firstname').value
-    this.lastname = document.querySelector('#lastname').value
-    this.email = document.querySelector('#email').value
     this.fiscalcode = document.querySelector('#fiscalcode').value
     this.purpose = document.querySelector('#purpose').value
     this.dateofbill = document.querySelector('#dateofbill').value
