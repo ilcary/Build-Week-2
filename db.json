@@ -1,0 +1,34 @@
+{
+  "utenti": [
+    {
+      "username": "Francy6789",
+      "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis reprehenderit, voluptas suscipit consectetur laborum quae corporis doloribus perferendis iste asperiores quibusdam",
+      "firstname": "Francesca",
+      "lastname": "Frattini",
+      "gender": "Female",
+      "email": "franfratt@example.com",
+      "profileURL": "img/female.png",
+      "id": 1
+    },
+    {
+      "username": "il Maloss29",
+      "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis reprehenderit, voluptas suscipit consectetur laborum quae corporis doloribus perferendis iste asperiores quibusdam",
+      "firstname": "Giovanni",
+      "lastname": "Malossi",
+      "gender": "Other",
+      "email": "maloss22giov@example.com",
+      "profileURL": "img/helicopter.png",
+      "id": 2
+    },
+    {
+      "username": "ilCary",
+      "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis reprehenderit, voluptas suscipit consectetur laborum quae corporis doloribus perferendis iste asperiores quibusdam",
+      "firstname": "Carisio",
+      "lastname": "Di Giampietro",
+      "gender": "Male",
+      "email": "ilcary.digiam@example.com",
+      "profileURL": "img/male.png",
+      "id": 3
+    }
+  ]
+}
