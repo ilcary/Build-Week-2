@@ -8,7 +8,8 @@
       "gender": "Female",
       "email": "franfratt@example.com",
       "profileURL": "img/female.png",
-      "id": 1
+      "id": 1,
+      "fatture": {}
     },
     {
       "username": "il Maloss29",
@@ -28,7 +29,19 @@
       "gender": "Male",
       "email": "ilcary.digiam@example.com",
       "profileURL": "img/male.png",
-      "id": 3
+      "id": 3,
+      "fatture": {}
+    },
+    {
+      "username": "Sium5263",
+      "bio": "sono molto bello e voi no",
+      "firstname": "Carisio",
+      "lastname": "Di Giampietro",
+      "gender": "Female",
+      "email": "carisiodigiampietro@hotmail.it",
+      "profileURL": "img/female.png",
+      "fatture": {},
+      "id": 5
     }
   ]
 }

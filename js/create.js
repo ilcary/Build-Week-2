@@ -12,6 +12,7 @@ class Utente {
         this.gender = __gender;
         this.email = __email;
         this.profileURL = __profileURL;
+        this.fatture={};
         this.takeForm()
 
     }
@@ -52,7 +53,6 @@ button.addEventListener('click',function(e){
     .then(res => res.json())
     .then(res => {
         swal({
-            position: 'top-end',
             icon: 'success',
             title: 'Good job bro a new user has been created!',
             text:`The user ${res.firstname} ${res.lastname} with id: ${res.id} has been created!`,
