@@ -18,7 +18,7 @@ class Utente {
         this.email = __email;
         this.profileURL = __profileURL;
         this.takeForm()
-        
+
     }
     takeForm() {
         this.username = document.querySelector('#username').value
@@ -29,13 +29,13 @@ class Utente {
         this.email = document.querySelector('#email').value
         this.checkgender()
     }
-    checkgender(){
+    checkgender() {
         if (document.querySelector('#gender').value == 'Male') {
-            this.profileURL= "img/male.png"
-        }else if(document.querySelector('#gender').value == 'Female'){
-            this.profileURL= "img/female.png" 
-        }else{
-            this.profileURL= "img/helicopter.png"
+            this.profileURL = "img/male.png"
+        } else if (document.querySelector('#gender').value == 'Female') {
+            this.profileURL = "img/female.png"
+        } else {
+            this.profileURL = "img/helicopter.png"
         }
     }
 }
@@ -50,14 +50,69 @@ fetch(apiUtenti + '/' + userId)
         this.lastname = document.querySelector('#lastname').value = data.lastname
         this.gender = document.querySelector('#gender').value = data.gender
         this.email = document.querySelector('#email').value = data.email
-        
+
     })
 
 
+function validate(form) {
+    console.log(form)
 
+    if (form.username.value == "") {
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: "Please provide your Nickname!",
+        })
+        form.username.focus();
+        return false;
+    }
+    if (form.dateofbirth.value == "") {
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: "Please provide your date of birth!",
+        })
+        form.dateofbirth.focus();
+        return false;
+    }
+    if (form.firstname.value == "") {
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: "Please provide your first name!",
+        })
+        form.firstname.focus();
+        return false;
+    }
+    if (form.lastname.value == "") {
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: "Please provide your last name!",
+        })
+        form.lastname.focus();
+        return false;
+    }
+    var emailID = form.email.value;
+    atpos = emailID.indexOf("@");
+    dotpos = emailID.lastIndexOf(".");
+    if (atpos < 1 || (dotpos - atpos < 2)) {
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: "Please enter correct email",
+        })
+        form.email.focus();
+        return false;
+    }
+    return (true);
+}
 
 button.addEventListener('click', function (e) {
     e.preventDefault();
+
+    if (!(validate(creazioneUtente)))
+        return
 
     let user = new Utente(username, btd, firstname, lastname, gender, email);
 

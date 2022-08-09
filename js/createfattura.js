@@ -1,3 +1,4 @@
+
 let params = new URLSearchParams(location.search)
 if (!params.has('id')) {
     location.href = 'index.html';
@@ -26,6 +27,7 @@ fetch(apiUtenti + '/' + userId)
 
     })
 
+/*
 class Indirizzo {
     constructor(__address, __country, __city, __zip) {
         this.address = __address
@@ -41,9 +43,10 @@ class Indirizzo {
         this.zip = document.querySelector('#zip').value
     }
 }
+*/
 
 class Fatture {
-    constructor(__fiscalcode, __purpose, __dateofbill, __amount, __piva,__userId) {
+    constructor(__fiscalcode, __purpose, __dateofbill, __amount, __piva, __userId) {
         this.fiscalcode = __fiscalcode
         this.purpose = __purpose
         this.dateofbill = __dateofbill
@@ -53,13 +56,15 @@ class Fatture {
         this.getIntestazione()
     }
 
-getIntestazione() {
-    this.fiscalcode = document.querySelector('#fiscalcode').value
-    this.purpose = document.querySelector('#purpose').value
-    this.dateofbill = document.querySelector('#dateofbill').value
-    this.amount = document.querySelector('#amount').value
-    this.piva = document.querySelector('#piva').value
-}
+
+    getIntestazione() {
+        this.fiscalcode = document.querySelector('#fiscalcode').value
+        this.purpose = document.querySelector('#purpose').value
+        this.dateofbill = document.querySelector('#dateofbill').value
+        this.amount = document.querySelector('#amount').value
+        this.piva = document.querySelector('#piva').value
+    }
+
 }
 
 //AGGIUNGI PREZZO////////////////////////////////////////
@@ -67,7 +72,7 @@ getIntestazione() {
 button.addEventListener('click', function (e) {
     e.preventDefault();
 
-    let fattura = new Fatture(fiscalcode, purpose, dateofbill, amount, piva,userId);
+    let fattura = new Fatture(fiscalcode, purpose, dateofbill, amount, piva, userId);
     console.log(fattura)
 
     let options = {

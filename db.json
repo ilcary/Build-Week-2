@@ -12,14 +12,13 @@
       "id": 1
     },
     {
-      "username": "aster the gray",
+      "username": "Aster the Gray",
       "btd": "1996-07-29",
       "firstname": "Florin",
       "lastname": "Sutu",
       "gender": "Male",
       "email": "florinsutu123@hotmail.it",
       "profileURL": "img/male.png",
-      "fatture": {},
       "id": 2
     },
     {
@@ -35,97 +34,67 @@
   ],
   "fatture": [
     {
-      "address": "Via Dei Gladioli 42",
-      "country": "ITA",
-      "city": "Avezzano ",
-      "zip": "67051",
-      "username": "il Maloss29",
-      "firstname": "Giovanni",
-      "lastname": "Malossi",
-      "email": "maloss22giov@example.com",
-      "id": 1
-    },
-    {
-      "address": "Via Dei Gladioli 42",
-      "country": "ITA",
-      "city": "Avezzano ",
-      "zip": "67051",
-      "username": "Francy",
-      "btd": "1800-02-18",
-      "firstname": "Francesca",
-      "lastname": "Frattini",
-      "email": "frafratt123@hotmail.it",
-      "fiscalcode": "dgmcrs",
-      "purpose": "1kg di arance",
-      "dateofbill": "2022-08-08",
-      "amount": "",
-      "piva": "thrw636h635h",
-      "id": 2
-    },
-    {
-      "address": "Via Dei Gladioli 42",
-      "country": "ITA",
-      "city": "Avezzano ",
-      "zip": "67051",
-      "username": "Mandraghe6699",
-      "btd": "2001-09-30",
-      "firstname": "Carisio",
-      "lastname": "Di Giampietro",
-      "email": "carisiodigiampietro@hotmail.it",
-      "fiscalcode": "DGMCRS01P30A515R",
-      "purpose": "1kg di sardine del mar Caspio",
-      "dateofbill": "2022-08-08",
-      "amount": "7201 $",
+      "fiscalcode": "STUFRN96L29Z129T",
+      "purpose": "ryzen 5800x",
+      "dateofbill": "2022-08-09",
+      "amount": "4799 $",
       "piva": "",
-      "id": 3
+      "userId": "2",
+      "id": 7
     },
     {
-      "address": "Aliquip quo exceptur",
-      "country": "KOR",
-      "city": "Iste magni dignissim",
-      "zip": "20473",
-      "username": "Francy",
-      "btd": "1800-02-18",
-      "firstname": "Francesca",
-      "lastname": "Frattini",
-      "email": "frafratt123@hotmail.it",
-      "fiscalcode": "Dicta eum est simil",
-      "purpose": "Impedit accusamus e",
-      "dateofbill": "2009-12-03",
-      "amount": "3831 $",
-      "piva": "390",
-      "id": 4
-    },
-    {
-      "address": "Via Dei Gladioli 42",
-      "country": "ITA",
-      "city": "Avezzano ",
-      "zip": "67051",
-      "username": "Francy",
-      "btd": "1800-02-18",
-      "firstname": "Francesca",
-      "lastname": "Frattini",
-      "email": "frafratt123@hotmail.it",
-      "fiscalcode": "DGMCRS01P30A515R",
-      "purpose": "1kg di sardine del mar Caspio",
-      "dateofbill": "2022-08-08",
-      "amount": "6669 $",
-      "piva": "yetjetyykj6598664164",
-      "id": 5
-    },
-    {
-      "fiscalcode": "DGMCRS01P30A515R",
-      "purpose": "1kg di sardine del mar Caspio",
-      "dateofbill": "2022-08-08",
-      "amount": "1125 $",
-      "piva": "yetjetyykj6598664164",
+      "fiscalcode": "Illo est velit ut si",
+      "purpose": "Duis voluptate quis ",
+      "dateofbill": "2008-08-26",
+      "amount": "1228 $",
+      "piva": "311",
       "userId": "3",
-      "username": "Francy",
-      "btd": "1800-02-18",
-      "firstname": "Francesca",
-      "lastname": "Frattini",
-      "email": "frafratt123@hotmail.it",
-      "id": 6
+      "id": 8
+    },
+    {
+      "fiscalcode": "Qui assumenda alias ",
+      "purpose": "Ullamco maxime dolor",
+      "dateofbill": "1987-11-09",
+      "amount": "5887 $",
+      "piva": "445",
+      "userId": "1",
+      "id": 9
+    },
+    {
+      "fiscalcode": "Sint velit quia expl",
+      "purpose": "Molestiae qui labori",
+      "dateofbill": "2018-08-04",
+      "amount": "3145 $",
+      "piva": "662",
+      "userId": "3",
+      "id": 10
+    },
+    {
+      "fiscalcode": "Deserunt nulla illo ",
+      "purpose": "Vero est consequunt",
+      "dateofbill": "1997-10-28",
+      "amount": "8107 $",
+      "piva": "900",
+      "userId": "3",
+      "id": 11
+    },
+    {
+      "fiscalcode": "Enim dolore excepteu",
+      "purpose": "rtx 3090ti",
+      "dateofbill": "2017-09-07",
+      "amount": "938 $",
+      "piva": "525",
+      "userId": "2",
+      "id": 12
+    },
+    {
+      "fiscalcode": "Omnis sint qui perfe",
+      "purpose": "Aut recusandae Omni",
+      "dateofbill": "2008-11-24",
+      "amount": "8647 $",
+      "piva": "591",
+      "userId": "1",
+      "id": 13
     }
   ]
 }
