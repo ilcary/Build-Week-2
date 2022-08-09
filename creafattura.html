@@ -13,25 +13,25 @@
 
 <body>
 
-  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom bg-light">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-      <svg class="bi me-2" width="40" height="32">
-        <use xlink:href="#bootstrap"></use>
-      </svg>
-      <span class="fs-4">Create a new invoice</span>
-    </a>
+  <header class="py-3 mb-4 border-bottom bg-light">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <img  src="img/invoice.png"class="bi me-2" width="40" height="32"></img>
+        <span class="fs-4">Create a new invoice</span>
+      </a>
 
-    <ul class="nav nav-pills">
-      <li class="nav-item"><a href="index.html" class="nav-link " aria-current="page">Home</a></li>
-      <li class="nav-item"><a href="crea.html" class="nav-link active">Create a new invoice</a></li>
-    </ul>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="index.html" class="nav-link " aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="crea.html" class="nav-link active">Create a new invoice</a></li>
+      </ul>
+    </div>
   </header>
 
-  <form id="c">
+  <form id="c" class="m-auto">
     <div class="container">
       <div class="row">
 
-        <div class="col-md-7 col-lg-8">
+        <div class="col-lg-9 m-auto">
           <h4 class="mb-3">Billing address</h4>
           <form class="needs-validation" novalidate="">
             <div class="row g-3">
@@ -55,7 +55,8 @@
                 <label for="username" class="form-label disabled">Username</label>
                 <div class="input-group has-validation">
                   <span class="input-group-text">@</span>
-                  <input type="text" disabled class="form-control" id="username" placeholder="Username" required="required">
+                  <input type="text" disabled class="form-control" id="username" placeholder="Username"
+                    required="required">
                   <div class="invalid-feedback">
                     Your username is required.
                   </div>
@@ -65,7 +66,8 @@
               <div class="col-3">
                 <label for="btd" class="form-label disabled">Date of birth</label>
                 <div class="input-group has-validation">
-                  <input type="date" disabled class="form-control" id="btd" placeholder="Date of birth" required="required">
+                  <input type="date" disabled class="form-control" id="btd" placeholder="Date of birth"
+                    required="required">
                   <div class="invalid-feedback">
                     Your date of birth is required.
                   </div>
@@ -388,7 +390,7 @@
             </div>
 
             <hr class="my-4">
-        
+
             <div class="row gy-3">
               <div class="col-md-6">
                 <label for="fiscalcode" class="form-label">Fiscal code</label>
@@ -398,7 +400,7 @@
                   Fiscal code is required
                 </div>
               </div>
-  
+
               <div class="col-md-6">
                 <label for="purpose" class="form-label">For</label>
                 <input type="text" class="form-control" id="purpose" placeholder="" required="required">
@@ -406,7 +408,7 @@
                   The purpose of the bill is required
                 </div>
               </div>
-  
+
               <div class="col-md-3">
                 <label for="dateofbill" class="form-label">Date</label>
                 <input type="date" class="form-control" id="dateofbill" placeholder="" required="required">
@@ -414,7 +416,7 @@
                   Expiration date required
                 </div>
               </div>
-  
+
               <div class="col-md-3">
                 <label for="amount" class="form-label">Total amount </label>
                 <input type="text" disabled class="form-control" id="amount" placeholder="" required="required">
@@ -425,20 +427,20 @@
 
               <div class="col-md-6">
                 <label for="piva" class="form-label">VAT number</label>
-                <input type="text"  class="form-control" id="piva" placeholder="" required="">
+                <input type="text" class="form-control" id="piva" placeholder="" required="">
                 <div class="invalid-feedback">
                   VAT number is required
                 </div>
               </div>
 
             </div>
-            
-            
-            
 
-                <hr class="my-4">
 
-                <button class="w-100 btn btn-primary btn-lg" id="creafattura">Submit new bill</button>
+
+
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-primary btn-lg" id="creafattura">Submit new bill</button>
           </form>
         </div>
       </div>
