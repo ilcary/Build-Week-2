@@ -84,7 +84,7 @@ fetch(apiUtenti)
                 })
         }
 
-    }).then(() => creaGrafico())
+    }).then(() => creaGrafico ())
 
 console.log(totalAmountUser)
 
@@ -207,7 +207,7 @@ console.log(arrayDate)
 console.log(arrayPrezzi)
 console.log(allUser)
 
-function creaGrafico() {
+function creaGrafico () {
     const ctx = document.getElementById('myChart').getContext('2d');
     const xlables = []
     const myChart = new Chart(ctx, {
@@ -237,6 +237,7 @@ function creaGrafico() {
             }]
         },
         options: {
+            responsive: true,
             scales: {
                 y: {
                     beginAtZero: true
