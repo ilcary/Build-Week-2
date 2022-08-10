@@ -13,7 +13,7 @@
   <header class=" py-3 mb-4 border-bottom bg-light">
     <div class="container d-flex flex-wrap justify-content-center">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <img  src="img/invoice.png"class="bi me-2" width="40" height="32"></img>
+        <img  src="img/invoice.png"class="bi me-2" width="40"></img>
         <span class="fs-4">User Management</span>
       </a>
 
@@ -24,22 +24,32 @@
       </ul>
     </div>
   </header>
-
-
-
+<!-- chartjs cerco di fare un grafico decente -->
+<div class="container">
+<canvas id="myChart" width="200" height="50"></canvas>
+</div>
   <div class="container">
 
     <input type="text" class="form-control w-50 m-auto" placeholder="Search here" id="searchInput">
-    <span>Order by</span>
-    <button class="orderBy" >Date &#8659;</button>
-    <button class="orderBy" >Date &#8657;</button>
-    <button class="orderBy" >Amount &#8659;</button>
-    <button class="orderBy" >Amount &#8657;</button>
-    <button id="orderByName" >Name</button>
-    
 
+    <div class="d-flex justify-content-around mt-4">
+    <h4 class="text-white ">Order by:</h4>
+    <button class="orderBy btn btn-warning fs-5 fw-semibold" data-btn="dateDown">Date <i class="fa-solid fa-arrow-up-short-wide"></i></button>
+    <button class="orderBy btn btn-warning fs-5 fw-semibold" data-btn="dateUp">Date <i class="fa-solid fa-arrow-down-wide-short"></i></button>
+    <button class="orderBy btn btn-warning fs-5 fw-semibold" data-btn="amountDown">Amount <i class="fa-solid fa-arrow-up-short-wide"></i></button>
+    <button class="orderBy btn btn-warning fs-5 fw-semibold" data-btn="amountUp">Amount <i class="fa-solid fa-arrow-down-wide-short"></i></button>
+    <button id="orderByName " class="btn btn-warning fs-5 fw-semibold" data-btn="byName">Name</button>
+    </div>
+
+    <div class="d-grid p-2 bg-light rounded-3 mt-4">
+    <input type="date" class="form-select form-control col-4 searchRange mb-2"  aria-label="Default select example">
+    </input>
+    <input type="date" class="form-select form-control col-4 searchRange mb-2"  aria-label="Default select example">
+    </input>
+    <button class="btn btn-warning w-50 m-auto fs-5 fw-semibold" id="formRange" >From - To</button>
+</div>
     <div class="d-none">
-      <div class="card mt-5 bill">
+      <div class="card mt-4 bill">
         <div class="card-body">
           <h5 id="billnumber" class="card-title">BILL n°</h5>
         </div>
@@ -56,8 +66,6 @@
       </div>
     </div>
 
-
-
     <div id="billContainer" class="container d-flex flex-row justify-content-evenly flex-wrap">
 
     </div>
@@ -66,11 +74,9 @@
 
 
 
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://kit.fontawesome.com/ca90b3e3f2.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
   <script src="./js/bill.js"></script>
 </body>
 

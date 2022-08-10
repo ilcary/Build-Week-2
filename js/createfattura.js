@@ -23,7 +23,7 @@ fetch(apiUtenti + '/' + userId)
         document.querySelector('#lastname').value = data.lastname
         document.querySelector('#email').value = data.email
         document.querySelector('#btd').value = data.btd
-        document.querySelector('#amount').value = Math.floor(Math.random() * 10000) + ' $'
+        document.querySelector('#amount').value = Math.floor(Math.random() * 10000)
 
     })
 
