@@ -55,6 +55,38 @@ class Fatture {
 
 let arrayDate = []
 let arrayPrezzi = []
+let totalAmountUser = []
+let allUser = []
+
+fetch(apiUtenti)
+    .then(res => res.json())
+    .then(dati => {
+        dati.map(function (i) {
+            console.log(dati)
+            console.log(i.firstname)
+            allUser.push(i.firstname + ' ' + i.lastname)
+        })
+
+        console.log(allUser)
+        for (let utente of dati) {
+            let idUser = utente.id
+
+            fetch(apiUtentiFatture)
+                .then(res => res.json())
+                .then(allBills => {
+                    let userAmount = 0
+                    for (let bill of allBills) {
+                        if (bill.userId == idUser) {
+                            userAmount += parseInt(bill.amount)
+                        }
+                    }
+                    totalAmountUser.push(userAmount)
+                })
+        }
+
+    }).then(() => creaGrafico ())
+
+console.log(totalAmountUser)
 
 fetch(apiUtentiFatture)
     .then(res => res.json())
@@ -64,7 +96,6 @@ fetch(apiUtentiFatture)
             arrayDate.push(fattura.dateofbill)
             arrayPrezzi.push(fattura.amount)
             let bill = new Fatture(fattura.fiscalcode, fattura.purpose, fattura.dateofbill, fattura.amount, fattura.piva, fattura.userId, fattura.id)
-
         }
     })
 
@@ -150,11 +181,11 @@ function order() {
                 datiFatture.sort(function (a, b) {
                     let dateA = new Date(a.dateofbill);
                     let dateB = new Date(b.dateofbill);
-                   return dateB - dateA
+                    return dateB - dateA
                 })
 
                 for (let i of datiFatture) {
-                    console.log(sortedRanges+' dopo il sort ////////////////////////////////////////////////////')
+                    console.log(sortedRanges + ' dopo il sort ////////////////////////////////////////////////////')
                     console.log(i.dateofbill);
                     let start = sortedRanges[0] /* new Date() */
                     let end = sortedRanges[1] /* new Date() */
@@ -170,7 +201,61 @@ function order() {
         })
 }
 
+let rndnum = [12, 19, 3, 5, 2, 3]
+console.log(rndnum)
+console.log(arrayDate)
+console.log(arrayPrezzi)
+console.log(allUser)
 
+function creaGrafico () {
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const xlables = []
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: allUser,
+            datasets: [{
+                label: 'Sales History',
+                data: totalAmountUser,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+}
+
+// provo a fare un graficoo con chartjs
+
+/*() => {
+    for(let i of allUser){
+        xlables.push(allUser[i])
+    }
+}
+console.log(xlables)
 
 let rndnum = [12, 19, 3, 5, 2, 3]
 console.log(rndnum)
@@ -213,4 +298,4 @@ const myChart = new Chart(ctx, {
             }
         }
     }
-});
+});*/

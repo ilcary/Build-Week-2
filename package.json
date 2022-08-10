@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "backend": "json-server -w db.json"
+    "backend": "json-server -w db.json",
+    "compile:sass": "node-sass -r scss -o css -w"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  }
 }
