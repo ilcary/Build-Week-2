@@ -90,6 +90,6 @@ button.addEventListener('click', function (e) {
                 text: `Dear ${res.firstname} ${res.lastname} with id: ${res.id} your order has been correctly sent!`,
                 showConfirmButton: false,
                 timer: 5000
-            })/* .then(() => location.href = 'index.html') */
+            })/*.then(() => location.href = 'index.html')*/
         })
 })

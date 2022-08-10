@@ -22,7 +22,7 @@ class Carta {
         element.textContent = write
         return element;
     }
-
+    
     cardHTML() {
         let card = document.querySelector('#cardTemplate .card').cloneNode(true) //here we make the sauce, a card template and with the first method whe write the data collected from the fetch
         console.log(this.username)
@@ -37,7 +37,7 @@ class Carta {
         card.querySelector('#modifica').href = `mod.html?id=${this.id}`
         card.querySelector('#fattura').href = `creafattura.html?id=${this.id}`
         card.querySelector('#elimina').addEventListener('click',()=>{
-
+            
             swal({
                 title: "Are you sure bro?",
                 text: "Once deleted, you will not be able to recover this user!",
@@ -46,11 +46,11 @@ class Carta {
                 dangerMode: true,
               })
               .then((willDelete) => {
-                if (willDelete) {
-                    deleteUser(this.id)
-                    swal("Poof! Your ex has been deleted now go get yourself a beer!", {
-                    icon: "success",
-                  }).then(() => location.href = 'index.html')
+                  if (willDelete) {
+                      deleteUser(this.id)
+                      swal("Poof! Your ex has been deleted now go get yourself a beer!", {
+                        icon: "success",
+                    }).then(() => location.href = 'index.html')
                 } else {
                     swal("Okok take your time bro forgetting an ex isn't easy at all");
                 }
