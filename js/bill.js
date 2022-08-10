@@ -129,9 +129,11 @@ function order() {
                     return ammountA - ammountB
                 })
             } else {
+                console.log('ciao')
                 datiFatture.sort(function (a, b) {
                     let ammountA = (a.amount.slice(0, -1)) * 1;
                     let ammountB = (b.amount.slice(0, -1)) * 1;
+                    console.log(ammountA)
                     return ammountB - ammountA
                 })
             }
