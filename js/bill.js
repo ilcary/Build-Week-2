@@ -32,7 +32,7 @@ class Fatture {
         this.selectAndWrite(this.bill, '#fiscalcode', this.fiscalcode, 'Fiscal Code: ')
         this.selectAndWrite(this.bill, '#purpose', this.purpose, "Purpose: ")
         this.selectAndWrite(this.bill, '#dateofbill', this.dateofbill, "Date of Bill: ")
-        this.selectAndWrite(this.bill, '#amount', this.amount, "Amount: ")
+        this.selectAndWrite(this.bill, '#amount', this.amount + '$', "Amount: ")
         this.selectAndWrite(this.bill, '#piva', this.piva, "VAT: ")
         let display = document.querySelector('#billContainer')
 
@@ -68,7 +68,7 @@ fetch(apiUtentiFatture)
         }
     })
 
-console.log(arrayDate, arrayPrezzi)
+
 
 let search = document.querySelector('#searchInput')
 
@@ -93,15 +93,16 @@ function filterBill() {
 }
 
 let orderByDateAmount = document.querySelectorAll('.orderBy')
-let orderByName = document.querySelector('#orderByName')
-
-
 orderByDateAmount.forEach(item => item.addEventListener('click', order))
+let orderByName = document.querySelector('#orderByName')
+let btnSearchRange = document.querySelector('#formRange')
+btnSearchRange.addEventListener('click', order)
+
 
 function order() {
     let billList = document.querySelectorAll('.deleatable')
-    what = this.textContent
-    console.log(this.textContent);
+    what = this.dataset.btn
+    console.log(this.dataset.btn);
     billList.forEach(item => {
         item.remove()
     })
@@ -109,42 +110,107 @@ function order() {
     fetch(apiUtentiFatture)
         .then(res => res.json())
         .then(datiFatture => {
-
-            if (what == 'Date ⇓') {
+            function doBills() {
+                for (let fattura of datiFatture) {
+                    new Fatture(fattura.fiscalcode, fattura.purpose, fattura.dateofbill, fattura.amount, fattura.piva, fattura.userId, fattura.id)
+                }
+            }
+            if (what == 'dateDown') {
                 datiFatture.sort(function (a, b) {
                     let dateA = new Date(a.dateofbill);
                     let dateB = new Date(b.dateofbill);
                     return dateA - dateB;
                 })
-            } else if (what == 'Date ⇑') {
+                doBills()
+            } else if (what == 'dateUp') {
                 datiFatture.sort(function (a, b) {
                     let dateA = new Date(a.dateofbill);
                     let dateB = new Date(b.dateofbill);
                     return dateB - dateA;
                 })
-            } else if (what == 'Amount ⇓') {
+                doBills()
+            } else if (what == 'amountDown') {
                 datiFatture.sort(function (a, b) {
-                    let ammountA = (a.amount.slice(0, -1)) * 1;
-                    let ammountB = (b.amount.slice(0, -1)) * 1;
-                    return ammountA - ammountB
+                    return a.amount - b.amount
                 })
+                doBills()
+            } else if (what == 'amountUp') {
+                datiFatture.sort(function (a, b) {
+                    return b.amount - a.amount
+                })
+                doBills()
             } else {
+                let arrRanges = document.querySelectorAll('.searchRange')
+                console.log(arrRanges[0].value, arrRanges[1].value)
+                let dateRange = []
+                arrRanges.forEach(item => dateRange.push(item.value))//less spaghettiiiiiii
+                console.log(dateRange + ' /////////////////////////////////////////////////////////////')
+                let sortedRanges = dateRange.sort((a, b) => new Date(a) - new Date(b))
+
                 datiFatture.sort(function (a, b) {
-                    let ammountA = (a.amount.slice(0, -1)) * 1;
-                    let ammountB = (b.amount.slice(0, -1)) * 1;
-                    return ammountB - ammountA
+                    let dateA = new Date(a.dateofbill);
+                    let dateB = new Date(b.dateofbill);
+                   return dateB - dateA
                 })
+
+                for (let i of datiFatture) {
+                    console.log(sortedRanges+' dopo il sort ////////////////////////////////////////////////////')
+                    console.log(i.dateofbill);
+                    let start = sortedRanges[0] /* new Date() */
+                    let end = sortedRanges[1] /* new Date() */
+                    console.log('start ' + start, 'end ' + end)
+
+                    if (i.dateofbill >= start && i.dateofbill <= end) {
+                        console.log(i);
+                        new Fatture(i.fiscalcode, i.purpose, i.dateofbill, i.amount, i.piva, i.userId, i.id)
+                    }
+                } arrRanges = []
             }
-
-            console.log(datiFatture);
-
-            for (let fattura of datiFatture) {
-                arrayDate.push(fattura.dateofbill)
-                arrayPrezzi.push(fattura.amount)
-                let bill = new Fatture(fattura.fiscalcode, fattura.purpose, fattura.dateofbill, fattura.amount, fattura.piva, fattura.userId, fattura.id)
-
-            }
+            console.log(this.value);
         })
-
-
 }
+
+
+
+let rndnum = [12, 19, 3, 5, 2, 3]
+console.log(rndnum)
+console.log(arrayDate)
+console.log(arrayPrezzi)
+
+
+// provo a fare un graficoo con chartjs
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: 'Sales History',
+            data: rndnum,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
