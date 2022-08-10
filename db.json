@@ -1,47 +1,154 @@
 {
   "utenti": [
     {
-      "username": "Francy6789",
-      "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis reprehenderit, voluptas suscipit consectetur laborum quae corporis doloribus perferendis iste asperiores quibusdam",
-      "firstname": "Francesca",
-      "lastname": "Frattini",
-      "gender": "Female",
-      "email": "franfratt@example.com",
-      "profileURL": "img/female.png",
-      "id": 1,
-      "fatture": {}
-    },
-    {
-      "username": "il Maloss29",
-      "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis reprehenderit, voluptas suscipit consectetur laborum quae corporis doloribus perferendis iste asperiores quibusdam",
-      "firstname": "Giovanni",
-      "lastname": "Malossi",
-      "gender": "Other",
-      "email": "maloss22giov@example.com",
-      "profileURL": "img/helicopter.png",
-      "id": 2
-    },
-    {
-      "username": "ilCary",
-      "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis reprehenderit, voluptas suscipit consectetur laborum quae corporis doloribus perferendis iste asperiores quibusdam",
+      "username": "Mandraghe6699",
+      "btd": "2001-09-30",
       "firstname": "Carisio",
       "lastname": "Di Giampietro",
       "gender": "Male",
-      "email": "ilcary.digiam@example.com",
+      "email": "carisiodigiampietro@hotmail.it",
       "profileURL": "img/male.png",
-      "id": 3,
-      "fatture": {}
+      "fatture": {},
+      "id": 1
     },
     {
-      "username": "Sium5263",
-      "bio": "sono molto bello e voi no",
-      "firstname": "Carisio",
-      "lastname": "Di Giampietro",
+      "username": "Aster the Gray",
+      "btd": "1996-07-29",
+      "firstname": "Florin",
+      "lastname": "Sutu",
+      "gender": "Male",
+      "email": "florinsutu123@hotmail.it",
+      "profileURL": "img/male.png",
+      "id": 2
+    },
+    {
+      "username": "Francy",
+      "btd": "1800-02-18",
+      "firstname": "Francesca",
+      "lastname": "Frattini",
       "gender": "Female",
-      "email": "carisiodigiampietro@hotmail.it",
+      "email": "frafratt123@hotmail.it",
       "profileURL": "img/female.png",
-      "fatture": {},
+      "id": 3
+    }
+  ],
+  "fatture": [
+    {
+      "fiscalcode": "Perspiciatis quae v",
+      "purpose": "Enim commodi vel asp",
+      "dateofbill": "1973-12-05",
+      "amount": "5999",
+      "piva": "923",
+      "userId": "1",
+      "id": 1
+    },
+    {
+      "fiscalcode": "Voluptas eos omnis q",
+      "purpose": "Sunt tenetur eligen",
+      "dateofbill": "1982-01-16",
+      "amount": "7333",
+      "piva": "45",
+      "userId": "1",
+      "id": 2
+    },
+    {
+      "fiscalcode": "Qui quas sit iste e",
+      "purpose": "Elit occaecat sit ",
+      "dateofbill": "2007-01-22",
+      "amount": "3339",
+      "piva": "847",
+      "userId": "1",
+      "id": 3
+    },
+    {
+      "fiscalcode": "Consequatur est est",
+      "purpose": "Neque ab sint nisi i",
+      "dateofbill": "1983-05-10",
+      "amount": "1767",
+      "piva": "211",
+      "userId": "1",
+      "id": 4
+    },
+    {
+      "fiscalcode": "Praesentium sunt vol",
+      "purpose": "Rerum rerum ut eos i",
+      "dateofbill": "1974-03-19",
+      "amount": "8519",
+      "piva": "352",
+      "userId": "1",
       "id": 5
+    },
+    {
+      "fiscalcode": "Autem omnis maiores ",
+      "purpose": "Nostrud sequi pariat",
+      "dateofbill": "2011-01-01",
+      "amount": "3546",
+      "piva": "543",
+      "userId": "2",
+      "id": 6
+    },
+    {
+      "fiscalcode": "Consectetur laborum",
+      "purpose": "Laborum Eiusmod inv",
+      "dateofbill": "1973-04-03",
+      "amount": "5967",
+      "piva": "449",
+      "userId": "2",
+      "id": 7
+    },
+    {
+      "fiscalcode": "Quia beatae recusand",
+      "purpose": "Duis velit iusto ad",
+      "dateofbill": "2001-01-13",
+      "amount": "4822",
+      "piva": "260",
+      "userId": "2",
+      "id": 8
+    },
+    {
+      "fiscalcode": "Qui dolorem deserunt",
+      "purpose": "Delectus incidunt ",
+      "dateofbill": "2007-08-23",
+      "amount": "805",
+      "piva": "645",
+      "userId": "2",
+      "id": 9
+    },
+    {
+      "fiscalcode": "Tempore impedit ma",
+      "purpose": "Magna animi sed exp",
+      "dateofbill": "2010-05-05",
+      "amount": "2468",
+      "piva": "862",
+      "userId": "3",
+      "id": 10
+    },
+    {
+      "fiscalcode": "Omnis voluptatum sit",
+      "purpose": "Do deserunt qui offi",
+      "dateofbill": "2020-09-04",
+      "amount": "2741",
+      "piva": "766",
+      "userId": "3",
+      "id": 11
+    },
+    {
+      "fiscalcode": "Eum proident est ip",
+      "purpose": "Modi ipsum omnis id",
+      "dateofbill": "2013-07-20",
+      "amount": "209",
+      "piva": "224",
+      "userId": "3",
+      "id": 12
+    },
+    {
+      "fiscalcode": "Eiusmod laudantium ",
+      "purpose": "Labore aut sunt eum ",
+      "dateofbill": "1973-12-31",
+      "amount": "3473",
+      "piva": "699",
+      "userId": "3",
+      "id": 13
     }
   ]
 }
