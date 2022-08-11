@@ -1,14 +1,25 @@
-#modifica:hover{
+#modifica:hover {
     background-color: $warning;
-    color:white;
 }
 
-#elimina:hover{
+#elimina:hover {
     background-color: $danger;
-    color:white;
-} 
+}
 
-#fattura:hover{
-    background-color: $secondary;
-    color:white;
+#fattura {
+    border: 2px solid $copper-red;
+}
+
+#fattura:hover {
+    background-color: $copper-red;
+}
+
+.card,
+ul .list-group-item {
+    background-color: $rich-black-fogra-29;
+    color: white
+}
+
+div .card-body {
+    background-color: $rich-black-fogra-29;
 }
