@@ -84,7 +84,7 @@ fetch(apiUtenti)
                 })
         }
 
-    }).then(() => creaGrafico ())
+    }).then(() => creaGrafico())
 
 console.log(totalAmountUser)
 
@@ -207,7 +207,7 @@ console.log(arrayDate)
 console.log(arrayPrezzi)
 console.log(allUser)
 
-function creaGrafico () {
+function creaGrafico() {
     const ctx = document.getElementById('myChart').getContext('2d');
     const xlables = []
     const myChart = new Chart(ctx, {
@@ -218,20 +218,14 @@ function creaGrafico () {
                 label: 'Sales History',
                 data: totalAmountUser,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.6)',
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(255, 206, 86, 0.6)',
-                    'rgba(75, 192, 192, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(255, 159, 64, 0.6)'
+                    'rgba(214, 104, 83, 0.7)',
+                    'rgba(125, 78, 87, 0.7)',
+                    'rgba(140, 153, 176, 0.7)',
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(214, 104, 83, 1)',
+                    'rgba(125, 78, 87, 1)',
+                    'rgba(140, 153, 176, 1)',
                 ],
                 borderWidth: 1
             }]

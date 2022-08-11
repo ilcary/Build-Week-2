@@ -1,4 +1,3 @@
-
 @import 'variables';
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 @import 'bills';
@@ -7,3 +6,36 @@
 @import 'index';
 @import 'mod';
 
+
+body {
+    background-color: $charcoal;
+    background-size: cover;
+}
+
+header {
+    background: $rich-black-fogra-29;
+}
+
+.nav-pills .nav-link.active {
+    background-color: $copper-red;
+}
+
+a.nav-link,
+span.fs-4 {
+    color: $copper-red;
+}
+
+
+input.form-control,
+select#gender.form-control {
+    color: gray;
+}
+
+@mixin font($prop, $val) {
+    font-#{$prop}: $val;
+}
+
+* {
+    @include font ('size', 1rem);
+    @include font ('family', 'Helvetica');
+}

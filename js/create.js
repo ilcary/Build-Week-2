@@ -44,7 +44,7 @@ function validate(form) {
             icon: 'error',
             title: 'Oops...',
             text: "Please provide your Nickname!",
-          })
+        })
         form.username.focus();
         return false;
     }
@@ -53,7 +53,7 @@ function validate(form) {
             icon: 'error',
             title: 'Oops...',
             text: "Please provide your date of birth!",
-          })
+        })
         form.dateofbirth.focus();
         return false;
     }
@@ -62,7 +62,7 @@ function validate(form) {
             icon: 'error',
             title: 'Oops...',
             text: "Please provide your first name!",
-          })
+        })
         form.firstname.focus();
         return false;
     }
@@ -71,26 +71,26 @@ function validate(form) {
             icon: 'error',
             title: 'Oops...',
             text: "Please provide your last name!",
-          })
+        })
         form.lastname.focus();
         return false;
     }
     var emailID = form.email.value;
-         atpos = emailID.indexOf("@");
-         dotpos = emailID.lastIndexOf(".");
-    if (atpos < 1 || ( dotpos - atpos < 2 )) {
+    atpos = emailID.indexOf("@");
+    dotpos = emailID.lastIndexOf(".");
+    if (atpos < 1 || (dotpos - atpos < 2)) {
         swal({
             icon: 'error',
             title: 'Oops...',
             text: "Please enter correct email",
-          })
-        form.email.focus() ;
+        })
+        form.email.focus();
         return false;
-     }
-     return( true );
     }
+    return (true);
+}
 
-         
+
 
 
 
