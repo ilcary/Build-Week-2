@@ -210,10 +210,12 @@ console.log(allUser)
 function creaGrafico() {
     const ctx = document.getElementById('myChart').getContext('2d');
     const xlables = []
+
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: allUser,
+            labels:
+                allUser,
             datasets: [{
                 label: 'Sales History',
                 data: totalAmountUser,
@@ -227,11 +229,13 @@ function creaGrafico() {
                     'rgba(125, 78, 87, 1)',
                     'rgba(140, 153, 176, 1)',
                 ],
+
                 borderWidth: 1
             }]
         },
         options: {
             responsive: true,
+
             scales: {
                 y: {
                     beginAtZero: true
@@ -241,6 +245,7 @@ function creaGrafico() {
     });
 
 }
+
 
 // provo a fare un graficoo con chartjs
 
