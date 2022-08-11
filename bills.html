@@ -5,6 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Progetto js3</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+  <link rel="manifest" href="icon/site.webmanifest">
   <link rel="stylesheet" href="css/stile.css">
 </head>
 
@@ -28,9 +32,11 @@
       </div>
     </header>
     <!-- chartjs cerco di fare un grafico decente -->
-    <div class="container">
+    <div class="container d-none" id="chartContainer">
       <canvas id="myChart" class="p-3" width="200" height="50"></canvas>
     </div>
+
+
     <div class="container">
 
       <input type="text" class="form-control w-50 m-auto mt-5" placeholder="Search here" id="searchInput">
@@ -73,9 +79,8 @@
         </div>
       </div>
 
-      <div id="billContainer" class="container d-flex flex-row justify-content-evenly flex-wrap mb-5">
+      <div id="billContainer" class="container d-flex flex-row justify-content-evenly flex-wrap mb-5"></div>
 
-      </div>
     </div>
 
   </div>
