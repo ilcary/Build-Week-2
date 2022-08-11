@@ -6,7 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crea utente</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+  <link rel="manifest" href="icon/site.webmanifest">
   <link rel="stylesheet" href="css/stile.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -16,8 +21,8 @@
     <header class=" py-3 mb-4 border-bottom">
       <div class="container d-flex flex-wrap justify-content-center">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <img src="img/people.png" class="bi me-2" width="40"></img>
-          <span class="fs-4">Create users</span>
+          <i class="bi bi-person-plus-fill fs-2 text-secondary"></i>
+          <span class="fs-4 mx-2">Create users</span>
         </a>
 
         <ul class="nav nav-pills">
@@ -34,23 +39,23 @@
         <div class="row">
 
           <div class="col-4">
-            <label for="username" class="fw-bolder text-secondary">Nickname</label>
+            <label for="username" class="text-white">Nickname</label>
             <input name="username" type="text" class="form-control" id="username" placeholder="nickname">
           </div>
           <div class="col-4">
-            <label for="btd" class="fw-bolder text-secondary">Date of birth</label>
+            <label for="btd" class="text-white">Date of birth</label>
             <input name="dateofbirth" type="date" class="form-control" id="btd" placeholder="Date of birth">
           </div>
           <div class="col-4">
-            <label for="firstname" class="fw-bolder text-secondary">First name</label>
+            <label for="firstname" class="text-white">First name</label>
             <input name="firstname" type="text" class="form-control" id="firstname" placeholder="firstname">
           </div>
           <div class="col-4">
-            <label for="lastname" class="fw-bolder text-secondary">Last name</label>
+            <label for="lastname" class="mt-3 text-white">Last name</label>
             <input name="lastname" type="text" class="form-control" id="lastname" placeholder="lastname">
           </div>
           <div class="col-4">
-            <label for="gender" class="fw-bolder text-secondary">Gender</label>
+            <label for="gender" class="mt-3 text-white">Gender</label>
             <select class="form-control" id="gender">
               <option>Male</option>
               <option>Female</option>
@@ -58,11 +63,11 @@
             </select>
           </div>
           <div class="col-4">
-            <label for="email" class="fw-bolder text-secondary">Email</label>
+            <label for="email" class="mt-3 text-white">Email</label>
             <input name="email" type="text" class="form-control" id="email" placeholder="email">
           </div>
 
-          <button class="btn btn-secondary mt-3" id="create">Salva</button>
+          <button class="btn btn-secondary mt-3 w-50 m-auto" id="create">Salva</button>
 
         </div>
       </div>
