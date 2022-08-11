@@ -7,10 +7,10 @@ let options = {
     }
 }
 
-function deleteUser(id){
-    fetch(apiUtenti+'/'+id, options)
-    .then(res=>res.json())
-    .then(res=>{
-       
-    })
+function deleteUser(id) {
+    fetch(apiUtenti + '/' + id, options)
+        .then(res => res.json())
+        .then(res => {
+
+        })
 }

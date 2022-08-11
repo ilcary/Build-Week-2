@@ -4,7 +4,7 @@ const display = document.querySelector('#display')
 
 
 class Carta {
-    constructor(__username, __btd, __firstname, __lastname, __gender, __email, __profileURL,__id) {
+    constructor(__username, __btd, __firstname, __lastname, __gender, __email, __profileURL, __id) {
         this.username = __username;
         this.btd = __btd;
         this.firstname = __firstname;
@@ -36,7 +36,7 @@ class Carta {
         card.querySelector('.card-img-top').src = this.profileURL
         card.querySelector('#modifica').href = `mod.html?id=${this.id}`
         card.querySelector('#fattura').href = `creafattura.html?id=${this.id}`
-        card.querySelector('#elimina').addEventListener('click',()=>{
+        card.querySelector('#elimina').addEventListener('click', () => {
 
             swal({
                 title: "Are you sure bro?",
@@ -44,17 +44,17 @@ class Carta {
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
-              })
-              .then((willDelete) => {
-                if (willDelete) {
-                    deleteUser(this.id)
-                    swal("Poof! Your ex has been deleted now go get yourself a beer!", {
-                    icon: "success",
-                  }).then(() => location.href = 'index.html')
-                } else {
-                    swal("Okok take your time bro forgetting an ex isn't easy at all");
-                }
-              });              
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        deleteUser(this.id)
+                        swal("Poof! Your ex has been deleted now go get yourself a beer!", {
+                            icon: "success",
+                        }).then(() => location.href = 'index.html')
+                    } else {
+                        swal("Okok take your time bro forgetting an ex isn't easy at all");
+                    }
+                });
         })
         display.append(card)
     }
@@ -65,7 +65,7 @@ fetch(api_url)//make the call
     .then(utenti => {//now i've the data i can do what i want
         console.log(utenti);
         for (let utente of utenti) {
-            let card = new Carta(utente.username, utente.btd, utente.firstname, utente.lastname, utente.gender, utente.email, utente.profileURL,utente.id)
+            let card = new Carta(utente.username, utente.btd, utente.firstname, utente.lastname, utente.gender, utente.email, utente.profileURL, utente.id)
         }
     })
 

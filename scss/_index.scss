@@ -1,0 +1,25 @@
+#modifica:hover {
+    background-color: $warning;
+}
+
+#elimina:hover {
+    background-color: $danger;
+}
+
+#fattura {
+    border: 2px solid $copper-red;
+}
+
+#fattura:hover {
+    background-color: $copper-red;
+}
+
+.card,
+ul .list-group-item {
+    background-color: $rich-black-fogra-29;
+    color: white
+}
+
+div .card-body {
+    background-color: $rich-black-fogra-29;
+}
