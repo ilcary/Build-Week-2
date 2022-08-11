@@ -31,11 +31,11 @@ class Utente {
     }
     checkgender() {
         if (document.querySelector('#gender').value == 'Male') {
-            this.profileURL = "img/male.png"
+            this.profileURL = "img/icons8-batman-vecchio-480.png"
         } else if (document.querySelector('#gender').value == 'Female') {
-            this.profileURL = "img/female.png"
+            this.profileURL = "img/icons8-wonder-woman-480.png"
         } else {
-            this.profileURL = "img/helicopter.png"
+            this.profileURL = "img/icons8-capitan-america-480.png"
         }
     }
 }

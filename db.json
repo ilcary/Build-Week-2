@@ -7,7 +7,7 @@
       "lastname": "Di Giampietro",
       "gender": "Male",
       "email": "carisiodigiampietro@hotmail.it",
-      "profileURL": "img/male.png",
+      "profileURL": "img/icons8-batman-vecchio-480.png",
       "id": 1
     },
     {
@@ -17,7 +17,7 @@
       "lastname": "Sutu",
       "gender": "Male",
       "email": "florinsutu123@hotmail.it",
-      "profileURL": "img/male.png",
+      "profileURL": "img/icons8-batman-vecchio-480.png",
       "id": 2
     },
     {
@@ -27,7 +27,7 @@
       "lastname": "Frattini",
       "gender": "Female",
       "email": "frafratt123@hotmail.it",
-      "profileURL": "img/female.png",
+      "profileURL": "img/icons8-wonder-woman-480.png",
       "id": 3
     }
   ],
