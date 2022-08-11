@@ -1,5 +1,10 @@
 const apiUtenti = 'http://localhost:3000/utenti';
 const apiUtentiFatture = 'http://localhost:3000/fatture';
+let query = window.matchMedia(("max-width: 768px"))
+if(query.matches){
+    let btn = document.createElement('button');
+    
+}
 
 class Fatture {
     constructor(__fiscalcode, __purpose, __dateofbill, __amount, __piva, __userId, __id) {
