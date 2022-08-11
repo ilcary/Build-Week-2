@@ -4,6 +4,7 @@
    * Copyright 2011-2022 Twitter, Inc.
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    */
+@import url("https://fonts.googleapis.com/css?family=Fredoka+One&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -8368,72 +8369,13 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important; } }
 
-.d-grid {
-  background-color: #212d40; }
+/*@import 'bills';
+@import 'crea';
+@import 'creafattura';
+@import 'index';
+@import 'mod';
 
-#stickybtn,
-#formRange,
-.orderBy,
-#orderByName {
-  background-color: #d66853; }
-
-canvas#myChart {
-  background-color: #212d40; }
-
-@media screen and (max-width: 767px) {
-  #chartContainer {
-    display: none; } }
-
-#stickybtn {
-  z-index: 10;
-  position: fixed;
-  bottom: 10px;
-  right: 10px; }
-
-@media screen and (min-width: 1024px) {
-  #stickybtn {
-    display: none; } }
-
-#billContainer .card::after {
-  position: absolute;
-  content: 'In progress';
-  top: 11px;
-  right: -14px;
-  padding: 0.5rem;
-  width: 10rem;
-  background: #3949ab;
-  color: white;
-  text-align: center;
-  box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2); }
-
-.input-group-text {
-  background-color: #11151c;
-  color: #8c99b0; }
-
-#modifica:hover {
-  background-color: #ffc107; }
-
-#elimina:hover {
-  background-color: #dc3545; }
-
-#fattura {
-  border: 2px solid #d66853; }
-
-#fattura:hover {
-  background-color: #d66853; }
-
-.card,
-ul .list-group-item {
-  background-color: #11151c;
-  color: white; }
-
-div .card-body {
-  background-color: #11151c; }
-
-body {
-  background-color: #364156;
-  background-size: cover; }
-
+*/
 header {
   background: #11151c; }
 
@@ -8451,3 +8393,72 @@ select#gender.form-control {
 * {
   font-size: 1rem;
   font-family: "Helvetica"; }
+
+body {
+  background: var(--backg);
+  --btn: #2ab1ce;
+  --backg: #fff;
+  --colorx: #232323; }
+
+body[data-theme='dartheme'] {
+  background: var(--backg);
+  --btn: #ea4b3c;
+  --backg: rgba(54, 65, 86, 1);
+  --colorx: #fff; }
+
+h1, .h1 {
+  font-family: 'Fredoka One', cursive;
+  font-weight: 300;
+  color: var(--colorx); }
+
+h2, .h2 {
+  font-family: 'Fredoka One', cursive;
+  font-weight: 100;
+  color: var(--colorx); }
+
+body {
+  background-color: var(--backg);
+  background-size: cover; }
+
+input[type=checkbox] {
+  visibility: hidden;
+  height: 0;
+  width: 0; }
+
+label {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  position: relative;
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 55px;
+  height: 30px;
+  background: var(--btn); }
+
+label:after {
+  border-radius: 50%;
+  position: absolute;
+  content: '';
+  background: #fff;
+  width: 20px;
+  height: 20px;
+  top: 5px;
+  left: 4px;
+  transition: ease-in-out 200ms; }
+
+input:checked + label {
+  background: #ea4b3c; }
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%); }
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: ease-in-out 200ms !important;
+  transition-delay: 0 !important; }

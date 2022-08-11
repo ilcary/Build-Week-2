@@ -1,16 +1,14 @@
 @import 'variables';
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
-@import 'bills';
+/*@import 'bills';
 @import 'crea';
 @import 'creafattura';
 @import 'index';
 @import 'mod';
 
+*/
 
-body {
-    background-color: $charcoal;
-    background-size: cover;
-}
+
 
 header {
     background: $rich-black-fogra-29;
@@ -39,3 +37,6 @@ select#gender.form-control {
     @include font ('size', 1rem);
     @include font ('family', 'Helvetica');
 }
+
+
+@import 'theme';
