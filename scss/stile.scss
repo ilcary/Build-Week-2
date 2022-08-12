@@ -20,7 +20,7 @@
 
 //Navbar
 header {
-    background: var(--cardbg);
+    background: var(--navbg);
 
     i {
         color: var(--details);
@@ -70,6 +70,6 @@ ul .list-group-item {
 input.form-control,
 select#gender.form-control,
 input {
-    color: var(--input);
+    color: var(--text);
     background-color: var(--input);
 }

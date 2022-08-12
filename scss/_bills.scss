@@ -8,7 +8,7 @@
 #formRange,
 .orderBy,
 #orderByName {
-    background-color: var(--details);
+    background-color: var(--buttons);
 
 }
 
@@ -44,8 +44,7 @@
     transform: rotate(-47deg);
 }
 
-//card Bills
-#billContainer .card::after 
+
 
 /* STATUS = DA GESTIRE / TO MANAGE */
 .labelofcard.toManage {
@@ -84,6 +83,6 @@
     #amount,
     #dateofbill,
     #purpose {
-        color: $charcoal2;
+        color: var(--billtext);
     }
 }

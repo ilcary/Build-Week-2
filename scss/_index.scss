@@ -16,10 +16,10 @@
 }
 
 .usersCard{
-    border: 1px solid var(--details);
+    border: 1px solid var(--bordercardut);
     ul li:not(:last-child){
         background-color: var(--cardbg);
         color: var(--text);
-        border: 1px solid var(--details)
+        border: 1px solid var(--bordercardut);
     }
 }
