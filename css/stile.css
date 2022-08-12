@@ -1,3 +1,5 @@
+/* DARK */
+/* LIGHT */
 /*!
    * Bootstrap  v5.2.0 (https://getbootstrap.com/)
    * Copyright 2011-2022 The Bootstrap Authors
@@ -8371,20 +8373,27 @@ textarea.form-control-lg {
 
 body {
   background: var(--backg);
-  --backg: rgb(17, 125, 26);
+  --backg: white;
   --text: black;
-  --cardbg: rgba(231, 236, 239, 1);
-  --details: rgba(39, 76, 119, 1);
-  --graphics: white;
-  --input: rgb(46, 46, 46); }
+  --cardbg: rgb(225, 225, 220);
+  --navbg: rgba(17, 21, 28, 1);
+  --details: rgba(214, 104, 83, 1);
+  --buttons: rgba(214, 104, 83, 1);
+  --graphics:rgba(17, 21, 28, 1);
+  --billtext: rgba(35, 35, 35, 1);
+  --input:  rgb(204, 206, 216); }
 
 body[data-theme='darkTheme'] {
   background: var(--backg);
   --backg: rgba(54, 65, 86, 1);
   --text: #fff;
-  --cardbg: rgba(17, 21, 28, 1);
+  --cardbg:rgba(17, 21, 28, 1);
+  --navbg: rgba(17, 21, 28, 1);
+  --bordercardut: rgba(214, 104, 83, 1);
   --details: rgba(214, 104, 83, 1);
+  --buttons: rgba(214, 104, 83, 1);
   --graphics: rgba(33, 45, 64, 1);
+  --billtext: rgba(140, 153, 176, 1);
   --input: rgba(140, 153, 176, 1); }
 
 body.transition,
@@ -8437,7 +8446,7 @@ body.transition *:after {
 #formRange,
 .orderBy,
 #orderByName {
-  background-color: var(--details); }
+  background-color: var(--buttons); }
 
 #stickybtn {
   z-index: 10;
@@ -8509,45 +8518,45 @@ body.transition *:after {
   #cardBill #amount,
   #cardBill #dateofbill,
   #cardBill #purpose {
-    color: #8c99b0; }
+    color: var(--billtext); }
 
 #create {
-  background-color: var(--details); }
+  background-color: var(--buttons); }
 
 .input-group-text {
   color: var(--input); }
 
 #creafattura {
-  background-color: #8c99b0; }
+  background-color: var(--buttons); }
 
-#modifica:hover {
-  background-color: #ffc107; }
+#modifica {
+  background-color: #ddb32a; }
 
-#elimina:hover {
+#elimina {
   background-color: #dc3545; }
 
 #fattura {
   border: 2px solid var(--details); }
 
-#fattura:hover {
+#fattura {
   background-color: var(--details); }
 
 .usersCard {
-  border: 1px solid var(--details); }
+  border: 1px solid var(--input); }
   .usersCard ul li:not(:last-child) {
-    background-color: var(--cardbg);
+    background-color: var(--cardutdbg);
     color: var(--text);
-    border: 1px solid var(--details); }
+    border: 1px solid var(--input); }
 
 #update {
-  background-color: var(--details); }
+  background-color: var(--buttons); }
 
 * {
   font-size: 1rem;
   font-family: "Helvetica"; }
 
 header {
-  background: var(--cardbg); }
+  background: var(--navbg); }
   header i {
     color: var(--details); }
   header .nav-pills .nav-link.active {
@@ -8576,5 +8585,5 @@ ul .list-group-item {
 input.form-control,
 select#gender.form-control,
 input {
-  color: var(--input);
+  color: var(--text);
   background-color: var(--input); }
