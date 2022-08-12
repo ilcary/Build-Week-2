@@ -1,25 +1,25 @@
-#modifica:hover {
-    background-color: $warning;
+#modifica{
+    background-color: rgb(221, 179, 42);
 }
 
-#elimina:hover {
+#elimina{
     background-color: $danger;
 }
 
-#fattura {
+#fattura{
     border: 2px solid var(--details);
 }
 
-#fattura:hover {
+#fattura{
     background-color: var(--details);
 
 }
 
 .usersCard{
-    border: 1px solid var(--bordercardut);
+    border: 1px solid var(--input);
     ul li:not(:last-child){
-        background-color: var(--cardbg);
+        background-color: var(--cardutdbg);
         color: var(--text);
-        border: 1px solid var(--bordercardut);
+        border: 1px solid var(--input);
     }
 }

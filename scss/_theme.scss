@@ -5,14 +5,13 @@ body {
 
     --backg: white;
     --text: black;
-    --cardbg: rgb(170, 184, 207);
+    --cardbg: rgb(225, 225, 220);
     --navbg: rgba(17, 21, 28, 1);
-    --bordercardut: rgb(78, 90, 115);
-    --details: rgba(96, 150, 186, 1);
-    --buttons: rgba(96, 150, 186, 1);
+    --details: rgba(214, 104, 83, 1);
+    --buttons: rgba(214, 104, 83, 1);
     --graphics:rgba(17, 21, 28, 1);
     --billtext: rgba(35, 35, 35, 1);
-    --input: rgb(166, 189, 203);
+    --input:  rgb(204, 206, 216);
 
 }
 
@@ -21,7 +20,7 @@ body[data-theme='darkTheme'] {
 
     --backg: rgba(54, 65, 86, 1);
     --text: #fff;
-    --cardbg: rgba(17, 21, 28, 1);
+    --cardbg:rgba(17, 21, 28, 1);
     --navbg: rgba(17, 21, 28, 1);
     --bordercardut: rgba(214, 104, 83, 1);
     --details: rgba(214, 104, 83, 1);
