@@ -1,34 +1,14 @@
 @import 'variables';
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
-/*@import 'bills';
+@import 'theme';
+@import 'bills';
 @import 'crea';
 @import 'creafattura';
 @import 'index';
 @import 'mod';
 
-*/
 
-
-
-header {
-    background: $rich-black-fogra-29;
-}
-
-.nav-pills .nav-link.active {
-    background-color: $copper-red;
-}
-
-a.nav-link,
-span.fs-4 {
-    color: $copper-red;
-}
-
-
-input.form-control,
-select#gender.form-control {
-    color: gray;
-}
-
+//Font
 @mixin font($prop, $val) {
     font-#{$prop}: $val;
 }
@@ -39,4 +19,59 @@ select#gender.form-control {
 }
 
 
-@import 'theme';
+//Navbar
+header {
+    background: var(--cardbg);
+
+    i {
+        color: var(--details);
+    }
+
+    .nav-pills .nav-link.active {
+        background-color: var(--details);
+    }
+
+    a.nav-link,
+    span.fs-4 {
+        color: var(--details);
+    }
+}
+
+
+//Grafici
+canvas#myChart {
+    background-color: var(--graphics)
+}
+
+@media screen and (max-width: 767px) {
+    #chartContainer {
+        display: none;
+    }
+}
+
+
+//Testi
+li,
+label,
+h4,
+select {
+    color: var(--text);
+}
+
+
+ //Card base
+.card,
+ul .list-group-item {
+    background-color: var(--cardbg);
+    color: var(--text);
+}
+
+
+//Form base
+input.form-control,
+select#gender.form-control,
+input {
+    color: var(--input);
+    background-color: var(--input);
+}
+
