@@ -40,7 +40,7 @@ class Utente {
     }
 }
 
-fetch(apiUtenti + '/' + userId)
+/* fetch(apiUtenti + '/' + userId)
     .then(res => res.json())
     .then(data => {
 
@@ -53,7 +53,7 @@ fetch(apiUtenti + '/' + userId)
 
     })
 
-
+ */
 function validate(form) {
     console.log(form)
 
