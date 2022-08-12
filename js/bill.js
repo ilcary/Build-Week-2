@@ -1,5 +1,10 @@
 const apiUtenti = 'http://localhost:3000/utenti';
 const apiUtentiFatture = 'http://localhost:3000/fatture';
+let query = window.matchMedia(("max-width: 768px"))
+if(query.matches){
+    let btn = document.createElement('button');
+    
+}
 
 class Fatture {
     constructor(__fiscalcode, __purpose, __dateofbill, __amount, __piva, __userId, __id) {
@@ -53,53 +58,55 @@ class Fatture {
     }
 }
 
-let arrayDate = []
-let arrayPrezzi = []
-let totalAmountUser = []
-let allUser = []
-
-fetch(apiUtenti)
-    .then(res => res.json())
-    .then(dati => {
-        dati.map(function (i) {
-            console.log(dati)
-            console.log(i.firstname)
-            allUser.push(i.firstname + ' ' + i.lastname)
-        })
-
-        console.log(allUser)
-        for (let utente of dati) {
-            let idUser = utente.id
-
-            fetch(apiUtentiFatture)
-                .then(res => res.json())
-                .then(allBills => {
-                    let userAmount = 0
-                    for (let bill of allBills) {
-                        if (bill.userId == idUser) {
-                            userAmount += parseInt(bill.amount)
-                        }
-                    }
-                    totalAmountUser.push(userAmount)
-                })
+async function getData() {
+    /*  let utenti = await fetch(apiUtenti).then(res => res.json())
+     let fatture = await fetch(apiUtentiFatture).then(res => res.json()) */
+    let [utenti, fatture] = await Promise.all([fetch(apiUtenti).then(res => res.json()), fetch(apiUtentiFatture).then(res => res.json())])
+    console.log(utenti, fatture);
+    let yeartotalamount = []
+    let sketchYears = fatture.map((i) => i.dateofbill.slice(0,-6)).sort((a,b) => a-b) // take date from bill and then we slice day and month value and we order them 
+    let years = [...new Set(sketchYears)] //(Set is a collection of unique values.) the new Set will implicitly remove duplicate elements 
+    console.log(years)
+    years.forEach(anno => {
+        let yearAmount = 0
+        for (let fattura of fatture) {  
+            if (fattura.dateofbill.slice(0,-6) == anno) {
+                yearAmount += parseInt(fattura.amount)
+            }
         }
+        yeartotalamount.push(yearAmount)
+    });
+    for (let fattura of fatture) {
+        new Fatture(fattura.fiscalcode, fattura.purpose, fattura.dateofbill, fattura.amount, fattura.piva, fattura.userId, fattura.id)
 
-    }).then(() => creaGrafico())
+    }
 
-console.log(totalAmountUser)
+    creaGrafico(years, yeartotalamount)
 
-fetch(apiUtentiFatture)
-    .then(res => res.json())
-    .then(datiFatture => {
+    /* let allUser = utenti.map((i) => i.firstname + ' ' + i.lastname)
 
-        for (let fattura of datiFatture) {
-            arrayDate.push(fattura.dateofbill)
-            arrayPrezzi.push(fattura.amount)
-            let bill = new Fatture(fattura.fiscalcode, fattura.purpose, fattura.dateofbill, fattura.amount, fattura.piva, fattura.userId, fattura.id)
-        }
+    fatture = fatture.map((f) => {
+        let user = utenti.find((u) => u.id == f.userId)
+        f['user'] = user
+        return f
     })
+    console.log(fatture);
 
+    let totalAmountUser = []
+    for (let utente of utenti) {
+        let idUser = utente.id
+        let userAmount = 0
+        for (let bill of fatture) {
+            if (bill.userId == idUser) {
+                userAmount += parseInt(bill.amount)
+            }
+        }
+        totalAmountUser.push(userAmount)
+    }
+    creaGrafico(allUser, totalAmountUser) */
+}
 
+getData()
 
 let search = document.querySelector('#searchInput')
 
@@ -123,12 +130,12 @@ function filterBill() {
     })
 }
 
+//selecting all the buttons that let the user sort the bill list 
 let orderByDateAmount = document.querySelectorAll('.orderBy')
 orderByDateAmount.forEach(item => item.addEventListener('click', order))
 let orderByName = document.querySelector('#orderByName')
 let btnSearchRange = document.querySelector('#formRange')
 btnSearchRange.addEventListener('click', order)
-
 
 function order() {
     let billList = document.querySelectorAll('.deleatable')
@@ -201,24 +208,16 @@ function order() {
         })
 }
 
-let rndnum = [12, 19, 3, 5, 2, 3]
-console.log(rndnum)
-console.log(arrayDate)
-console.log(arrayPrezzi)
-console.log(allUser)
-
-function creaGrafico() {
+function creaGrafico(dataX, dataY) {
+    document.querySelector('#chartContainer').classList.remove('d-none');
     const ctx = document.getElementById('myChart').getContext('2d');
-    const xlables = []
-
     const myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
-            labels:
-                allUser,
+            labels: dataX,
             datasets: [{
-                label: 'Sales History',
-                data: totalAmountUser,
+                label: 'Company Sales History',
+                data: dataY,
                 backgroundColor: [
                     'rgba(214, 104, 83, 0.7)',
                     'rgba(125, 78, 87, 0.7)',
@@ -238,63 +237,10 @@ function creaGrafico() {
 
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
                 }
             }
         }
     });
 
 }
-
-
-// provo a fare un graficoo con chartjs
-
-/*() => {
-    for(let i of allUser){
-        xlables.push(allUser[i])
-    }
-}
-console.log(xlables)
-
-let rndnum = [12, 19, 3, 5, 2, 3]
-console.log(rndnum)
-console.log(arrayDate)
-console.log(arrayPrezzi)
-
-
-// provo a fare un graficoo con chartjs
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: 'Sales History',
-            data: rndnum,
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});*/

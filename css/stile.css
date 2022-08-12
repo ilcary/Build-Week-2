@@ -1,29 +1,5 @@
-/*
-$rich-black-fogra-29: rgba(13, 27, 42, 1);
-$oxford-blue: rgba(27, 38, 59, 1);
-$bdazzled-blue: rgba(65, 90, 119, 1);
-$shadow-blue: rgba(119, 141, 169, 1);
-$platinum: rgba(224, 225, 221, 1);
-
-$gradient-top: linear-gradient(0deg, #778da9ff, #e0e1ddff);
-$gradient-right: linear-gradient(90deg, #0d1b2aff, #1b263bff, #415a77ff, #778da9ff, #e0e1ddff);
-$gradient-bottom: linear-gradient(180deg, #0d1b2aff, #1b263bff, #415a77ff, #778da9ff, #e0e1ddff);
-$gradient-left: linear-gradient(270deg, #0d1b2aff, #1b263bff, #415a77ff, #778da9ff, #e0e1ddff);
-$gradient-top-right: linear-gradient(45deg, #0d1b2aff, #1b263bff, #415a77ff, #778da9ff, #e0e1ddff);
-$gradient-bottom-right: linear-gradient(135deg, #0d1b2aff, #1b263bff, #415a77ff, #778da9ff, #e0e1ddff);
-$gradient-top-left: linear-gradient(225deg, #0d1b2aff, #1b263bff, #415a77ff, #778da9ff, #e0e1ddff);
-$gradient-bottom-left: linear-gradient(315deg, #0d1b2aff, #1b263bff, #415a77ff, #778da9ff, #e0e1ddff);
-$gradient-radial: radial-gradient(#0d1b2aff, #1b263bff, #415a77ff, #778da9ff, #e0e1ddff);
-
-$primary: $rich-black-fogra-29;
-//$secondary
-$success: $bdazzled-blue;
-//$info: 
-//$warning:
-//$danger:        
-$light: $platinum;
-$dark: $oxford-blue;
-*/
+/* DARK */
+/* LIGHT */
 /*!
    * Bootstrap  v5.2.0 (https://getbootstrap.com/)
    * Copyright 2011-2022 The Bootstrap Authors
@@ -8397,6 +8373,7 @@ textarea.form-control-lg {
 .d-grid {
   background-color: #212d40; }
 
+#stickybtn,
 #formRange,
 .orderBy,
 #orderByName {
@@ -8404,6 +8381,32 @@ textarea.form-control-lg {
 
 canvas#myChart {
   background-color: #212d40; }
+
+@media screen and (max-width: 767px) {
+  #chartContainer {
+    display: none; } }
+
+#stickybtn {
+  z-index: 10;
+  position: fixed;
+  bottom: 10px;
+  right: 10px; }
+
+@media screen and (min-width: 1024px) {
+  #stickybtn {
+    display: none; } }
+
+#billContainer .card::after {
+  position: absolute;
+  content: 'In progress';
+  top: 11px;
+  right: -14px;
+  padding: 0.5rem;
+  width: 10rem;
+  background: #3949ab;
+  color: white;
+  text-align: center;
+  box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2); }
 
 .input-group-text {
   background-color: #11151c;
@@ -8450,3 +8453,48 @@ select#gender.form-control {
 * {
   font-size: 1rem;
   font-family: "Helvetica"; }
+
+.theme-switch-wrapper em {
+  margin-left: 10px;
+  font-size: 1rem; }
+
+.theme-switch {
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  width: 30px; }
+
+.theme-switch input {
+  display: none; }
+
+.slider {
+  background-color: #11151c;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s; }
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 13px;
+  left: 2px;
+  position: absolute;
+  transition: .4s;
+  width: 13px; }
+
+input:checked + .slider {
+  background-color: #8c99b0; }
+
+input:checked + .slider:before {
+  transform: translateX(12px); }
+
+.slider.round {
+  border-radius: 34px; }
+
+.slider.round:before {
+  border-radius: 50%; }

@@ -2,6 +2,7 @@
     background-color: $prussian-blue;
 }
 
+#stickybtn,
 #formRange,
 .orderBy,
 #orderByName {
@@ -11,3 +12,40 @@
 canvas#myChart {
     background-color: $prussian-blue;
 }
+
+@media screen and (max-width: 767px) {
+    #chartContainer {
+        display: none;
+    }
+    
+}
+
+#stickybtn {
+    z-index: 10;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+    #stickybtn {
+        display: none;
+    }
+    
+}
+
+
+#billContainer .card::after{
+    position: absolute;
+    content: 'In progress';
+    top: 11px;
+    right: -14px;
+    padding: 0.5rem;
+    width: 10rem;
+    background: #3949ab;
+    color: white;
+    text-align: center;
+    box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
+  }
+
+  

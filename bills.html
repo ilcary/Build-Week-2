@@ -5,6 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Progetto js3</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+  <link rel="manifest" href="icon/site.webmanifest">
   <link rel="stylesheet" href="css/stile.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
@@ -12,7 +16,7 @@
 
 <body>
 
-  <div id="main-container">
+
 
 
     <header class=" py-3 mb-4 border-bottom">
@@ -30,24 +34,27 @@
       </div>
     </header>
     <!-- chartjs cerco di fare un grafico decente -->
-    <div class="container ">
-      <canvas id="myChart" class="p-3" width="200" height="50"></canvas>
+
+    <div class="container d-none" id="chartContainer">
+    <canvas id="myChart" class="p-3" width="200" height="50"></canvas>
     </div>
+
+    <a id="stickybtn" href="#" class="btn fw-semibold"><i class="fa-solid fa-caret-up"></i></a>
+
     <div class="container">
 
       <input type="text" class="form-control w-50 m-auto mt-5" placeholder="Search here" id="searchInput">
 
-      <div class="d-flex justify-content-around mt-4">
-        <h4 class="text-primary">Order by:</h4>
-        <button class="orderBy btn fw-semibold" data-btn="dateDown">Date <i
+      <div class="d-lg-flex d-sm-flex  justify-content-around mt-4 text-center">
+        <h4 class="text-primary m-2 ">Order by:</h4>
+        <button class="orderBy m-2 btn fw-semibold" data-btn="dateDown">Date <i
             class="fa-solid fa-arrow-up-short-wide"></i></button>
-        <button class="orderBy btn fw-semibold" data-btn="dateUp">Date <i
+        <button class="orderBy m-2 btn fw-semibold" data-btn="dateUp">Date <i
             class="fa-solid fa-arrow-down-wide-short"></i></button>
-        <button class="orderBy btn fw-semibold" data-btn="amountDown">Amount <i
+        <button class="orderBy m-2 btn fw-semibold" data-btn="amountDown">Amount <i
             class="fa-solid fa-arrow-up-short-wide"></i></button>
-        <button class="orderBy btn fw-semibold" data-btn="amountUp">Amount <i
+        <button class="orderBy m-2 btn fw-semibold" data-btn="amountUp">Amount <i
             class="fa-solid fa-arrow-down-wide-short"></i></button>
-        <button id="orderByName" class="btn fw-semibold" data-btn="byName">Name</button>
       </div>
 
       <div class="d-grid p-4 rounded-3 my-5">
@@ -75,12 +82,11 @@
         </div>
       </div>
 
-      <div id="billContainer" class="container d-flex flex-row justify-content-evenly flex-wrap mb-5">
+      <div id="billContainer" class="container d-flex flex-row justify-content-evenly flex-wrap mb-5"></div>
 
-      </div>
     </div>
 
-  </div>
+
 
 
 

@@ -5,6 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Progetto js3</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+  <link rel="manifest" href="icon/site.webmanifest">
   <link rel="stylesheet" href="css/stile.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
@@ -30,51 +34,59 @@
       </div>
     </header>
 
-    <div class="d-none" id="cardTemplate">
-      <div class="container mt-4 ">
-        <div class="card mb-5 border-1 border-secondary" style="width: 18rem;">
-          <img src="" class="card-img-top m-auto my-2 w-25 " alt="">
-          <div class="card-body  text-secondary ">
-            <h5 class="card-title ">
-              <!-- Nickname -->
-            </h5>
+    <a id="stickybtn" href="#" class="btn fw-semibold"><i class="fa-solid fa-caret-up"></i></a>
+
+    <div class="container d-none" id="chartContainer">
+      <canvas id="myChart" class="p-3" width="200" height="50"></canvas>
+    </div>
+    <div class="container">
+
+      <div class="d-none" id="cardTemplate">
+        <div class="container mt-4 ">
+          <div class="card mb-5 border-1 border-secondary" style="width: 18rem;">
+            <img src="" class="card-img-top m-auto my-2 w-25 " alt="">
+            <div class="card-body  text-secondary ">
+              <h5 class="card-title ">
+                <!-- Nickname -->
+              </h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border-1 border-secondary">
+                <!-- f name -->
+              </li>
+              <li class="list-group-item border-1 border-secondary">
+                <!-- l name -->
+              </li>
+              <li class="list-group-item border-1 border-secondary">
+                <!-- gender -->
+              </li>
+              <li class="list-group-item border-1 border-secondary">
+                <!-- mail -->
+              </li>
+              <li class="list-group-item border-1 border-secondary">
+                <!-- birthday -->
+              </li>
+              <li class="list-group-item m-auto">
+                <a id="modifica" class="btn border border-2 border-warning text-white my-2">Update</a>
+                <a id="elimina" class="btn border border-2 border-danger text-white my-2">Delete</a>
+                <a id="fattura" class="btn text-white my-2"><i class="fa-solid fa-cart-plus "></i></a>
+              </li>
+            </ul>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item border-1 border-secondary">
-              <!-- f name -->
-            </li>
-            <li class="list-group-item border-1 border-secondary">
-              <!-- l name -->
-            </li>
-            <li class="list-group-item border-1 border-secondary">
-              <!-- gender -->
-            </li>
-            <li class="list-group-item border-1 border-secondary">
-              <!-- mail -->
-            </li>
-            <li class="list-group-item border-1 border-secondary">
-              <!-- birthday -->
-            </li>
-            <li class="list-group-item m-auto">
-              <a id="modifica" class="btn border border-2 border-warning text-white my-2">Update</a>
-              <a id="elimina" class="btn border border-2 border-danger text-white my-2">Delete</a>
-              <a id="fattura" class="btn text-white my-2"><i class="fa-solid fa-cart-plus "></i></a>
-            </li>
-          </ul>
         </div>
       </div>
+
+
+
+      <div id="display" class="container d-flex justify-content-around mt-5 flex-wrap"></div>
+
     </div>
 
-
-
-    <div id="display" class="container d-flex justify-content-around mt-5 flex-wrap"></div>
-
-  </div>
-
-  <script src="https://kit.fontawesome.com/ca90b3e3f2.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="./js/delete.js"></script>
-  <script src="./js/app.js"></script>
+    <script src="https://kit.fontawesome.com/ca90b3e3f2.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/delete.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 
