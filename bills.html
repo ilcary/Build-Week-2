@@ -14,91 +14,97 @@
 
 </head>
 
-    <header class=" py-3 mb-4 border-bottom">
-      <div class="container d-flex flex-wrap justify-content-center">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <i class="bi bi-receipt-cutoff fs-2"></i>
-          <span class="fs-4 mx-2">User Management</span>
-        </a>
+<header class=" py-3 mb-4 border-bottom">
 
-        <ul class="nav nav-pills">
-          <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
-          <li class="nav-item"><a href="bills.html" class="nav-link active">Bills</a></li>
-          <!-- if has quary params show solo dell user con lo swal alla fatturazione dell utente -->
-        </ul>
-      </div>
-    </header>
-
-    <input class="container_toggle" type="checkbox" id="switch" name="mode">
-    <label for="switch">Toggle</label>
-    <!-- chartjs cerco di fare un grafico decente -->
-    <div class="container d-none" id="chartContainer">
-      <canvas id="myChart" class="p-3" width="200" height="50"></canvas>
-    </div>
-
-    <a id="stickybtn" href="#" class="btn fw-semibold"><i class="fa-solid fa-caret-up"></i></a>
-
-    <div class="container">
-
-      <input type="text" class="form-control w-50 m-auto mt-5" placeholder="Search here" id="searchInput">
-
-      <div class="d-lg-flex d-sm-flex  justify-content-around mt-4 text-center">
-        <h4 class=" m-2 ">Order by:</h4>
-        <button class="orderBy m-2 btn fw-semibold" data-btn="dateDown">Date <i
-            class="fa-solid fa-arrow-up-short-wide"></i></button>
-        <button class="orderBy m-2 btn fw-semibold" data-btn="dateUp">Date <i
-            class="fa-solid fa-arrow-down-wide-short"></i></button>
-        <button class="orderBy m-2 btn fw-semibold" data-btn="amountDown">Amount <i
-            class="fa-solid fa-arrow-up-short-wide"></i></button>
-        <button class="orderBy m-2 btn fw-semibold" data-btn="amountUp">Amount <i
-            class="fa-solid fa-arrow-down-wide-short"></i></button>
-      </div>
- 
-      <div class="d-grid p-4 rounded-3 my-5">
-      <form name="fromtofilter">
-         <input type="date" name="datefromto" class="form-select form-control col-4 searchRange mb-2" aria-label="Default select example">
-        </input>
-        <input type="date" name="dateto" class="form-select form-control col-4 searchRange mb-2" aria-label="Default select example">
-        </input>
-        </form>
-        <button class="btn w-50 mt-3 m-auto fw-semibold" id="formRange">From - To</button>
-
-      </div>
-      <div class="d-none">
-        <div class="card mt-4 bill dietrolefatture">
-          <div class="card-body">
-            <h5 id="billnumber" class="card-title">BILL n°</h5>
-            <button id="label" class="labelofcard px-2 py-1 btn"></button>
-          </div>
-
-          <ul id="cardBill" class="list-group list-group-flush">
-            <li id="firstname" class="list-group-item mt-2"></li>
-            <li id="fiscalcode" class="list-group-item"></li>
-            <li id="purpose" class="list-group-item"></li>
-            <li id="dateofbill" class="list-group-item"></li>
-            <li id="amount" class="list-group-item"></li>
-            <li id="piva" class="list-group-item mb-2"></li>
-          </ul>
+  <div class="container d-flex flex-wrap justify-content-center">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <i class="bi bi-receipt-cutoff fs-2"></i>
+      <span class="fs-4 mx-2">Bills Management</span>
+    </a>
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="bills.html" class="nav-link active">Bills</a></li>
+      <li class="nav-item">
+        <div class="mx-4 m-2">
+          <input type="checkbox" class="checkbox" id="checkbox" name="mode">
+          <label for="checkbox" class="label">
+            <i class="fas fa-moon"></i>
+            <i class='fas fa-sun'></i>
+            <div class='ball'></div>
+          </label>
+        </div>
+      </li>
+      <!-- if has quary params show solo dell user con lo swal alla fatturazione dell utente -->
+    </ul>
+  </div>
+</header>
 
 
-      </div>
-    </div>
+<!-- chartjs cerco di fare un grafico decente -->
+<div class="container d-none" id="chartContainer">
+  <canvas id="myChart" class="p-3" width="200" height="50"></canvas>
+</div>
 
-    <div id="billContainer" class="container d-flex flex-row justify-content-evenly flex-wrap mb-5"></div>
+<a id="stickybtn" href="#" class="btn fw-semibold"><i class="fa-solid fa-caret-up"></i></a>
 
+<div class="container">
+
+  <input type="text" class="form-control w-50 m-auto mt-5" placeholder="Search here" id="searchInput">
+
+  <div class="d-lg-flex d-sm-flex  justify-content-around mt-4 text-center">
+    <h4 class=" m-2 ">Order by:</h4>
+    <button class="orderBy m-2 btn fw-semibold" data-btn="dateDown">Date <i
+        class="fa-solid fa-arrow-up-short-wide"></i></button>
+    <button class="orderBy m-2 btn fw-semibold" data-btn="dateUp">Date <i
+        class="fa-solid fa-arrow-down-wide-short"></i></button>
+    <button class="orderBy m-2 btn fw-semibold" data-btn="amountDown">Amount <i
+        class="fa-solid fa-arrow-up-short-wide"></i></button>
+    <button class="orderBy m-2 btn fw-semibold" data-btn="amountUp">Amount <i
+        class="fa-solid fa-arrow-down-wide-short"></i></button>
   </div>
 
+  <div class="d-grid p-4 rounded-3 my-5">
+    <form name="fromtofilter">
+      <input type="date" name="datefromto" class="form-select form-control col-4 searchRange mb-2"
+        aria-label="Default select example">
+      </input>
+      <input type="date" name="dateto" class="form-select form-control col-4 searchRange mb-2"
+        aria-label="Default select example">
+      </input>
+    </form>
+    <button class="btn w-50 mt-3 m-auto fw-semibold" id="formRange">From - To</button>
+
+  </div>
+  <div class="d-none">
+    <div class="card mt-3 m-1 bill ">
+      <div class="card-body dietrolefatture">
+        <h5 id="billnumber" class="card-title">BILL n°</h5>
+        <button id="label" class="labelofcard px-2 py-1 btn"></button>
+      </div>
+
+      <ul id="cardBill" class="list-group list-group-flush">
+        <li id="firstname" class="list-group-item mt-2"></li>
+        <li id="fiscalcode" class="list-group-item"></li>
+        <li id="purpose" class="list-group-item"></li>
+        <li id="dateofbill" class="list-group-item"></li>
+        <li id="amount" class="list-group-item"></li>
+        <li id="piva" class="list-group-item mb-2"></li>
+      </ul>
 
 
+    </div>
+  </div>
 
+  <div id="billContainer" class="container d-flex flex-row justify-content-evenly flex-wrap mb-5"></div>
 
+</div>
 
+<script src="./js/theme.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://kit.fontawesome.com/ca90b3e3f2.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="./js/bill.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://kit.fontawesome.com/ca90b3e3f2.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="./js/bill.js"></script>
-  <script src="./js/theme.js"></script>
 </body>
 
 

@@ -16,27 +16,34 @@
 
 <body>
 
-    <header class="py-3 mb-4 border-bottom ">
-      <div class="container d-flex flex-wrap justify-content-center">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <i class="bi bi-building fs-2"></i>
-          <span class="fs-4 mx-2">User Management</span>
-        </a>
+  <header class="py-3 mb-4 border-bottom ">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <i class="bi bi-building fs-2"></i>
+        <span class="fs-4 mx-2">User Management</span>
+      </a>
 
-        <ul class="nav nav-pills">
-          <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
-          <li class="nav-item"><a href="crea.html" class="nav-link">Create a new user</a></li>
-          <li class="nav-item"><a href="bills.html" class="nav-link">Bills</a></li>
-          <!-- if has quary params show solo dell user con lo swal alla fatturazione dell utente -->
-        </ul>
-      </div>
-    </header>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="crea.html" class="nav-link">Create a new user</a></li>
+        <li class="nav-item"><a href="bills.html" class="nav-link">Bills</a></li>
+        <li class="nav-item">
+          <div class="mx-4 m-2">
+            <input type="checkbox" class="checkbox" id="checkbox" name="mode">
+            <label for="checkbox" class="label">
+              <i class="fas fa-moon"></i>
+              <i class='fas fa-sun'></i>
+              <div class='ball'></div>
+            </label>
+          </div>
+        </li>
+        <!-- if has quary params show solo dell user con lo swal alla fatturazione dell utente -->
+      </ul>
+    </div>
+  </header>
 
-    <div class="container">
-      <input class="container_toggle" type="checkbox" id="switch" name="mode">
-      <label for="switch">Light/Dark</label>
-  </div>
-    <div id="main-container">
+
+  <div id="main-container">
 
     <a id="stickybtn" href="#" class="btn fw-semibold"><i class="fa-solid fa-caret-up"></i></a>
 
@@ -85,13 +92,13 @@
       <div id="display" class="container d-flex justify-content-around mt-5 flex-wrap"></div>
 
     </div>
-
+    <script src="./js/theme.js"></script>
     <script src="https://kit.fontawesome.com/ca90b3e3f2.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/delete.js"></script>
     <script src="./js/app.js"></script>
-    <script src="./js/theme.js"></script>
+
 </body>
 
 

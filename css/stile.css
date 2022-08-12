@@ -8394,6 +8394,42 @@ body.transition *:after {
   transition: ease-in-out 200ms !important;
   transition-delay: 0 !important; }
 
+.checkbox {
+  opacity: 0;
+  position: absolute; }
+
+.label {
+  width: 50px;
+  height: 26px;
+  background-color: #111;
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5); }
+
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear; }
+
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball {
+  transform: translateX(24px); }
+
+.fa-moon {
+  color: pink; }
+
+.fa-sun {
+  color: yellow; }
+
 .d-grid {
   background-color: var(--graphics); }
 
@@ -8416,16 +8452,30 @@ body.transition *:after {
 #billContainer .card {
   z-index: 2; }
 
-.dietrolefatture::before {
+.labelofcard.toManage::before {
   position: absolute;
-  z-index: -2;
-  content: '';
-  background: #584d7b;
-  height: 20px;
-  width: 35px;
-  top: 2.2rem;
-  right: -0.8rem;
-  transform: rotate(-47deg); }
+  right: 2px;
+  top: 33px;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border-top: 10px solid #4d2c5e;
+  border-bottom: 5px solid transparent;
+  border-right: 10px solid transparent;
+  content: " "; }
+
+.labelofcard.managed::before {
+  position: absolute;
+  right: 2px;
+  top: 33px;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border-top: 10px solid #1b245b;
+  border-bottom: 5px solid transparent;
+  border-right: 10px solid transparent;
+  content: " ";
+  border-radius: 0px 10px 35px; }
 
 /* STATUS = DA GESTIRE / TO MANAGE */
 .labelofcard.toManage {

@@ -60,7 +60,7 @@
       "piva": "45",
       "userId": "1",
       "id": 2,
-      "state": 1
+      "state": 2
     },
     {
       "fiscalcode": "Qui quas sit iste e",
@@ -89,7 +89,7 @@
       "amount": "8519",
       "piva": "352",
       "userId": "1",
-      "state": 1,
+      "state": 2,
       "id": 5
     },
     {

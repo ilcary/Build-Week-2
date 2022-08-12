@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  
+
 
 
 
@@ -32,14 +32,19 @@
         <ul class="nav nav-pills">
           <li class="nav-item"><a href="index.html" class="nav-link " aria-current="page">Home</a></li>
           <li class="nav-item"><a href="crea.html" class="nav-link active">Create a new user</a></li>
+          <li class="nav-item">
+            <div class="mx-4 m-2">
+              <input type="checkbox" class="checkbox" id="checkbox" name="mode">
+              <label for="checkbox" class="label">
+                <i class="fas fa-moon"></i>
+                <i class='fas fa-sun'></i>
+                <div class='ball'></div>
+              </label>
+            </div>
+          </li>
         </ul>
       </div>
     </header>
-
-    <input class="container_toggle" type="checkbox" id="switch" name="mode">
-    <label for="switch">Toggle</label>
-
-
 
     <form name="creazioneUtente" id="c">
       <div class="container">
@@ -81,10 +86,10 @@
     </form>
 
   </div>
-
+  <script src="./js/theme.js"></script>
+  <script src="https://kit.fontawesome.com/ca90b3e3f2.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="js/create.js"></script>
-  <script src="./js/theme.js"></script>
 </body>
 
 </html>
