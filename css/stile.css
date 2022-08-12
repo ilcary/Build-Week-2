@@ -8429,29 +8429,16 @@ body.transition *:after {
   right: -0.8rem;
   transform: rotate(-47deg); }
 
-#billContainer .card::after {
-  /* STATUS = DA GESTIRE / TO MANAGE */ }
-  #billContainer .card::after .labelofcard.toManage {
-    position: absolute;
-    z-index: 4;
-    /*  content: 'TO MANAGE'; */
-    top: 11px;
-    right: -14px;
-    background: #9f5ec3;
-    color: white;
-    text-align: center;
-    box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2); }
-  #billContainer .card::after #cardBill {
-    border-top: 1px solid var(--input); }
-    #billContainer .card::after #cardBill #fiscalcode,
-    #billContainer .card::after #cardBill #firstname,
-    #billContainer .card::after #cardBill #piva,
-    #billContainer .card::after #cardBill #amount,
-    #billContainer .card::after #cardBill #dateofbill,
-    #billContainer .card::after #cardBill #purpose {
-      color: #8c99b0; }
-  #billContainer .card::after :hover {
-    cursor: grab; }
+#billContainer .card::after .labelofcard.toManage {
+  position: absolute;
+  z-index: 4;
+  /*  content: 'TO MANAGE'; */
+  top: 11px;
+  right: -14px;
+  background: #9f5ec3;
+  color: white;
+  text-align: center;
+  box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2); }
 
 /* STATUS = GESTITA / MANAGED*/
 .labelofcard.managed {
@@ -8464,6 +8451,16 @@ body.transition *:after {
   color: white;
   text-align: center;
   box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2); }
+
+#cardBill {
+  border-top: 1px solid var(--input); }
+  #cardBill #fiscalcode,
+  #cardBill #firstname,
+  #cardBill #piva,
+  #cardBill #amount,
+  #cardBill #dateofbill,
+  #cardBill #purpose {
+    color: #8c99b0; }
 
 #create {
   background-color: var(--details); }

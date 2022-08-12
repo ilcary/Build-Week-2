@@ -26,7 +26,7 @@
 
 
 }
-
+//card Bills
 #billContainer .card {
 
     z-index: 2;
@@ -45,7 +45,7 @@
 }
 
 //card Bills
-#billContainer .card::after {
+#billContainer .card::after 
 
 /* STATUS = DA GESTIRE / TO MANAGE */
 .labelofcard.toManage {
@@ -62,26 +62,6 @@
 
 }
 
-#cardBill {
-    border-top: 1px solid var(--input);
-
-    #fiscalcode,
-    #firstname,
-    #piva,
-    #amount,
-    #dateofbill,
-    #purpose {
-        color: $charcoal2;
-    }
-}
-
-
-    :hover {
-        cursor: grab;
-    }
-}
-
-
 /* STATUS = GESTITA / MANAGED*/
 .labelofcard.managed {
     position: absolute;
@@ -95,3 +75,15 @@
     box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
 }
 
+#cardBill {
+    border-top: 1px solid var(--input);
+
+    #fiscalcode,
+    #firstname,
+    #piva,
+    #amount,
+    #dateofbill,
+    #purpose {
+        color: $charcoal2;
+    }
+}
