@@ -8438,8 +8438,6 @@ body.transition *:after {
   color: white;
   text-align: center;
   box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2); }
-  .labelofcard.toManage :hover {
-    cursor: grab; }
 
 /* STATUS = GESTITA / MANAGED*/
 .labelofcard.managed {
