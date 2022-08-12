@@ -46,13 +46,14 @@ class Indirizzo {
 */
 
 class Fatture {
-    constructor(__fiscalcode, __purpose, __dateofbill, __amount, __piva, __userId) {
+    constructor(__fiscalcode, __purpose, __dateofbill, __amount, __piva, __userId,__state) {
         this.fiscalcode = __fiscalcode
         this.purpose = __purpose
         this.dateofbill = __dateofbill
         this.amount = __amount
         this.piva = __piva
         this.userId = __userId
+        this.state = __state
         this.getIntestazione()
     }
 
@@ -63,6 +64,7 @@ class Fatture {
         this.dateofbill = document.querySelector('#dateofbill').value
         this.amount = document.querySelector('#amount').value
         this.piva = document.querySelector('#piva').value
+        this.state = 1
     }
 
 }

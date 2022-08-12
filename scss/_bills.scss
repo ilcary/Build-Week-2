@@ -1,23 +1,15 @@
-.d-grid {
-    background-color: $prussian-blue;
+//selettore range date
+.d-grid {  
+    background-color: var(--graphics);
 }
 
-#stickybtn,
+// bottoni ordinamento
+#stickybtn, 
 #formRange,
 .orderBy,
 #orderByName {
-    background-color: $copper-red;
-}
+    background-color: var(--details);
 
-canvas#myChart {
-    background-color: $prussian-blue;
-}
-
-@media screen and (max-width: 767px) {
-    #chartContainer {
-        display: none;
-    }
-    
 }
 
 #stickybtn {
@@ -31,21 +23,75 @@ canvas#myChart {
     #stickybtn {
         display: none;
     }
-    
+
+
+}
+
+#billContainer .card {
+
+    z-index: 2;
+}
+
+.dietrolefatture::before {
+    position: absolute;
+    z-index: -2;
+    content: '';
+    background: #584d7b;
+    height: 20px;
+    width: 35px;
+    top: 2.2rem;
+    right: -0.8rem;
+    transform: rotate(-47deg);
+}
+
+//card Bills
+#billContainer .card::after {
+
+/* STATUS = DA GESTIRE / TO MANAGE */
+.labelofcard.toManage {
+
+    position: absolute;
+    z-index: 4;
+    /*  content: 'TO MANAGE'; */
+    top: 11px;
+    right: -14px;
+    background: #9f5ec3;
+    color: white;
+    text-align: center;
+    box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
+
+}
+
+#cardBill {
+    border-top: 1px solid var(--input);
+
+    #fiscalcode,
+    #firstname,
+    #piva,
+    #amount,
+    #dateofbill,
+    #purpose {
+        color: $charcoal2;
+    }
 }
 
 
-#billContainer .card::after{
+    :hover {
+        cursor: grab;
+    }
+}
+
+
+/* STATUS = GESTITA / MANAGED*/
+.labelofcard.managed {
     position: absolute;
-    content: 'In progress';
+    z-index: 4;
+    /*     content: 'MANAGED'; */
     top: 11px;
     right: -14px;
-    padding: 0.5rem;
-    width: 10rem;
     background: #3949ab;
     color: white;
     text-align: center;
     box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
-  }
+}
 
-  

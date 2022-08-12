@@ -12,7 +12,6 @@ class Utente {
         this.gender = __gender;
         this.email = __email;
         this.profileURL = __profileURL;
-        this.fatture = {};
         this.takeForm()
 
     }

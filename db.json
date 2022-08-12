@@ -29,6 +29,16 @@
       "email": "frafratt123@hotmail.it",
       "profileURL": "img/icons8-wonder-woman-480.png",
       "id": 3
+    },
+    {
+      "username": "fyqemim",
+      "btd": "2022-06-01",
+      "firstname": "Hope",
+      "lastname": "Mccray",
+      "gender": "Male",
+      "email": "fegarypiq@mailinator.com",
+      "profileURL": "img/icons8-batman-vecchio-480.png",
+      "id": 4
     }
   ],
   "fatture": [
@@ -39,6 +49,7 @@
       "amount": "5999",
       "piva": "923",
       "userId": "1",
+      "state": 2,
       "id": 1
     },
     {
@@ -48,7 +59,8 @@
       "amount": "7333",
       "piva": "45",
       "userId": "1",
-      "id": 2
+      "id": 2,
+      "state": 1
     },
     {
       "fiscalcode": "Qui quas sit iste e",
@@ -57,6 +69,7 @@
       "amount": "3339",
       "piva": "847",
       "userId": "1",
+      "state": 1,
       "id": 3
     },
     {
@@ -66,6 +79,7 @@
       "amount": "1767",
       "piva": "211",
       "userId": "1",
+      "state": 1,
       "id": 4
     },
     {
@@ -75,6 +89,7 @@
       "amount": "8519",
       "piva": "352",
       "userId": "1",
+      "state": 1,
       "id": 5
     },
     {
@@ -84,6 +99,7 @@
       "amount": "3546",
       "piva": "543",
       "userId": "2",
+      "state": 2,
       "id": 6
     },
     {
@@ -93,6 +109,7 @@
       "amount": "5967",
       "piva": "449",
       "userId": "2",
+      "state": 1,
       "id": 7
     },
     {
@@ -102,6 +119,7 @@
       "amount": "4822",
       "piva": "260",
       "userId": "2",
+      "state": 1,
       "id": 8
     },
     {
@@ -111,6 +129,7 @@
       "amount": "805",
       "piva": "645",
       "userId": "2",
+      "state": 1,
       "id": 9
     },
     {
@@ -120,6 +139,7 @@
       "amount": "2468",
       "piva": "862",
       "userId": "3",
+      "state": 1,
       "id": 10
     },
     {
@@ -129,6 +149,7 @@
       "amount": "2741",
       "piva": "766",
       "userId": "3",
+      "state": 2,
       "id": 11
     },
     {
@@ -138,6 +159,7 @@
       "amount": "209",
       "piva": "224",
       "userId": "3",
+      "state": 1,
       "id": 12
     },
     {
@@ -147,7 +169,38 @@
       "amount": "3473",
       "piva": "699",
       "userId": "3",
+      "state": 1,
       "id": 13
+    },
+    {
+      "fiscalcode": "Sunt illo architect",
+      "purpose": "Dolor cum porro dolo",
+      "dateofbill": "2018-04-05",
+      "amount": "7728",
+      "piva": "893",
+      "userId": "2",
+      "state": 1,
+      "id": 14
+    },
+    {
+      "fiscalcode": "Soluta natus illum ",
+      "purpose": "Libero eos consequat",
+      "dateofbill": "1983-06-16",
+      "amount": "7672",
+      "piva": "789",
+      "userId": "4",
+      "state": 1,
+      "id": 15
+    },
+    {
+      "fiscalcode": "Recusandae Sint nis",
+      "purpose": "Dicta commodo ullam ",
+      "dateofbill": "2008-08-11",
+      "amount": "3787",
+      "piva": "491",
+      "userId": "4",
+      "state": 1,
+      "id": 16
     }
   ]
 }

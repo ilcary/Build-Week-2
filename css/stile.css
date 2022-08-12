@@ -6,6 +6,7 @@
    * Copyright 2011-2022 Twitter, Inc.
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    */
+@import url("https://fonts.googleapis.com/css?family=Fredoka+One&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -8370,21 +8371,39 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important; } }
 
+body {
+  background: var(--backg);
+  --backg: rgb(17, 125, 26);
+  --text: black;
+  --cardbg: rgba(231, 236, 239, 1);
+  --details: rgba(39, 76, 119, 1);
+  --graphics: white;
+  --input: rgb(46, 46, 46); }
+
+body[data-theme='darkTheme'] {
+  background: var(--backg);
+  --backg: rgba(54, 65, 86, 1);
+  --text: #fff;
+  --cardbg: rgba(17, 21, 28, 1);
+  --details: rgba(214, 104, 83, 1);
+  --graphics: rgba(33, 45, 64, 1);
+  --input: rgba(140, 153, 176, 1); }
+
+body.transition,
+body.transition *,
+body.transition *:before,
+body.transition *:after {
+  transition: ease-in-out 200ms !important;
+  transition-delay: 0 !important; }
+
 .d-grid {
-  background-color: #212d40; }
+  background-color: var(--graphics); }
 
 #stickybtn,
 #formRange,
 .orderBy,
 #orderByName {
-  background-color: #d66853; }
-
-canvas#myChart {
-  background-color: #212d40; }
-
-@media screen and (max-width: 767px) {
-  #chartContainer {
-    display: none; } }
+  background-color: var(--details); }
 
 #stickybtn {
   z-index: 10;
@@ -8396,21 +8415,64 @@ canvas#myChart {
   #stickybtn {
     display: none; } }
 
-#billContainer .card::after {
+#billContainer .card {
+  z-index: 2; }
+
+.dietrolefatture::before {
   position: absolute;
-  content: 'In progress';
+  z-index: -2;
+  content: '';
+  background: #584d7b;
+  height: 20px;
+  width: 35px;
+  top: 2.2rem;
+  right: -0.8rem;
+  transform: rotate(-47deg); }
+
+#billContainer .card::after {
+  /* STATUS = DA GESTIRE / TO MANAGE */ }
+  #billContainer .card::after .labelofcard.toManage {
+    position: absolute;
+    z-index: 4;
+    /*  content: 'TO MANAGE'; */
+    top: 11px;
+    right: -14px;
+    background: #9f5ec3;
+    color: white;
+    text-align: center;
+    box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2); }
+  #billContainer .card::after #cardBill {
+    border-top: 1px solid var(--input); }
+    #billContainer .card::after #cardBill #fiscalcode,
+    #billContainer .card::after #cardBill #firstname,
+    #billContainer .card::after #cardBill #piva,
+    #billContainer .card::after #cardBill #amount,
+    #billContainer .card::after #cardBill #dateofbill,
+    #billContainer .card::after #cardBill #purpose {
+      color: #8c99b0; }
+  #billContainer .card::after :hover {
+    cursor: grab; }
+
+/* STATUS = GESTITA / MANAGED*/
+.labelofcard.managed {
+  position: absolute;
+  z-index: 4;
+  /*     content: 'MANAGED'; */
   top: 11px;
   right: -14px;
-  padding: 0.5rem;
-  width: 10rem;
   background: #3949ab;
   color: white;
   text-align: center;
   box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2); }
 
+#create {
+  background-color: var(--details); }
+
 .input-group-text {
-  background-color: #11151c;
-  color: #8c99b0; }
+  color: var(--input); }
+
+#creafattura {
+  background-color: #8c99b0; }
 
 #modifica:hover {
   background-color: #ffc107; }
@@ -8419,37 +8481,54 @@ canvas#myChart {
   background-color: #dc3545; }
 
 #fattura {
-  border: 2px solid #d66853; }
+  border: 2px solid var(--details); }
 
 #fattura:hover {
-  background-color: #d66853; }
+  background-color: var(--details); }
 
-.card,
-ul .list-group-item {
-  background-color: #11151c;
-  color: white; }
+.usersCard {
+  border: 1px solid var(--details); }
+  .usersCard ul li:not(:last-child) {
+    background-color: var(--cardbg);
+    color: var(--text);
+    border: 1px solid var(--details); }
 
-div .card-body {
-  background-color: #11151c; }
-
-body {
-  background-color: #364156;
-  background-size: cover; }
-
-header {
-  background: #11151c; }
-
-.nav-pills .nav-link.active {
-  background-color: #d66853; }
-
-a.nav-link,
-span.fs-4 {
-  color: #d66853; }
-
-input.form-control,
-select#gender.form-control {
-  color: gray; }
+#update {
+  background-color: var(--details); }
 
 * {
   font-size: 1rem;
   font-family: "Helvetica"; }
+
+header {
+  background: var(--cardbg); }
+  header i {
+    color: var(--details); }
+  header .nav-pills .nav-link.active {
+    background-color: var(--details); }
+  header a.nav-link,
+  header span.fs-4 {
+    color: var(--details); }
+
+canvas#myChart {
+  background-color: var(--graphics); }
+
+@media screen and (max-width: 767px) {
+  #chartContainer {
+    display: none; } }
+
+li,
+label, h4, .h4,
+select {
+  color: var(--text); }
+
+.card,
+ul .list-group-item {
+  background-color: var(--cardbg);
+  color: var(--text); }
+
+input.form-control,
+select#gender.form-control,
+input {
+  color: var(--input);
+  background-color: var(--input); }

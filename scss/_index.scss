@@ -7,20 +7,19 @@
 }
 
 #fattura {
-    border: 2px solid $copper-red;
+    border: 2px solid var(--details);
 }
 
 #fattura:hover {
-    background-color: $copper-red;
+    background-color: var(--details);
+
 }
 
-.card,
-ul .list-group-item {
-    background-color: $rich-black-fogra-29;
-    color: white
+.usersCard{
+    border: 1px solid var(--details);
+    ul li:not(:last-child){
+        background-color: var(--cardbg);
+        color: var(--text);
+        border: 1px solid var(--details)
+    }
 }
-
-div .card-body {
-    background-color: $rich-black-fogra-29;
-}
-

@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Fredoka+One&display=swap");
+
+body {
+    background: var(--backg);
+
+    --backg: rgb(17, 125, 26);
+    --text: black;
+    --cardbg: rgba(231, 236, 239, 1);
+    --details: rgba(39, 76, 119, 1);
+    --graphics: white;
+    --input: rgb(46, 46, 46);
+
+}
+
+body[data-theme='darkTheme'] {
+    background: var(--backg);
+
+    --backg: rgba(54, 65, 86, 1);
+    --text: #fff;
+    --cardbg: rgba(17, 21, 28, 1);
+    --details: rgba(214, 104, 83, 1);
+    --graphics: rgba(33, 45, 64, 1);
+    --input: rgba(140, 153, 176, 1);
+
+}
+
+// animazione transizione
+body.transition,
+body.transition *,
+body.transition *:before,
+body.transition *:after {
+    transition: ease-in-out 200ms !important;
+    transition-delay: 0 !important;
+}
