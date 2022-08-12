@@ -3,12 +3,15 @@
 body {
     background: var(--backg);
 
-    --backg: rgb(17, 125, 26);
+    --backg: white;
     --text: black;
-    --cardbg: rgba(231, 236, 239, 1);
-    --details: rgba(39, 76, 119, 1);
-    --graphics: white;
-    --input: rgb(46, 46, 46);
+    --cardbg: rgb(225, 225, 220);
+    --navbg: rgba(17, 21, 28, 1);
+    --details: rgba(214, 104, 83, 1);
+    --buttons: rgba(214, 104, 83, 1);
+    --graphics:rgba(17, 21, 28, 1);
+    --billtext: rgba(35, 35, 35, 1);
+    --input:  rgb(204, 206, 216);
 
 }
 
@@ -17,9 +20,13 @@ body[data-theme='darkTheme'] {
 
     --backg: rgba(54, 65, 86, 1);
     --text: #fff;
-    --cardbg: rgba(17, 21, 28, 1);
+    --cardbg:rgba(17, 21, 28, 1);
+    --navbg: rgba(17, 21, 28, 1);
+    --bordercardut: rgba(214, 104, 83, 1);
     --details: rgba(214, 104, 83, 1);
+    --buttons: rgba(214, 104, 83, 1);
     --graphics: rgba(33, 45, 64, 1);
+    --billtext: rgba(140, 153, 176, 1);
     --input: rgba(140, 153, 176, 1);
 
 }

@@ -8,7 +8,7 @@
 #formRange,
 .orderBy,
 #orderByName {
-    background-color: var(--details);
+    background-color: var(--buttons);
 
 }
 
@@ -83,6 +83,6 @@
     #amount,
     #dateofbill,
     #purpose {
-        color: $charcoal2;
+        color: var(--billtext);
     }
 }
