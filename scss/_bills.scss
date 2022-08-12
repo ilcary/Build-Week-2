@@ -1,10 +1,10 @@
 //selettore range date
-.d-grid {  
+.d-grid {
     background-color: var(--graphics);
 }
 
 // bottoni ordinamento
-#stickybtn, 
+#stickybtn,
 #formRange,
 .orderBy,
 #orderByName {
@@ -27,6 +27,7 @@
 
 }
 
+//card Bills
 #billContainer .card {
 
     z-index: 2;
@@ -44,8 +45,7 @@
     transform: rotate(-47deg);
 }
 
-//card Bills
-#billContainer .card::after {
+
 
 /* STATUS = DA GESTIRE / TO MANAGE */
 .labelofcard.toManage {
@@ -62,6 +62,19 @@
 
 }
 
+/* STATUS = GESTITA / MANAGED */
+.labelofcard.managed {
+    position: absolute;
+    z-index: 4;
+    /*    content: 'MANAGED'; */
+    top: 11px;
+    right: -14px;
+    background: #3949ab;
+    color: white;
+    text-align: center;
+    box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
+}
+
 #cardBill {
     border-top: 1px solid var(--input);
 
@@ -74,24 +87,3 @@
         color: $charcoal2;
     }
 }
-
-
-    :hover {
-        cursor: grab;
-    }
-}
-
-
-/* STATUS = GESTITA / MANAGED*/
-.labelofcard.managed {
-    position: absolute;
-    z-index: 4;
-    /*     content: 'MANAGED'; */
-    top: 11px;
-    right: -14px;
-    background: #3949ab;
-    color: white;
-    text-align: center;
-    box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
-}
-
