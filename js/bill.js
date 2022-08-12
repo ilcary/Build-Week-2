@@ -1,19 +1,22 @@
 const apiUtenti = 'http://localhost:3000/utenti';
 const apiUtentiFatture = 'http://localhost:3000/fatture';
 let query = window.matchMedia(("max-width: 768px"))
-if(query.matches){
+if (query.matches) {
     let btn = document.createElement('button');
-    
+
 }
 
+
+
 class Fatture {
-    constructor(__fiscalcode, __purpose, __dateofbill, __amount, __piva, __userId, __id) {
+    constructor(__fiscalcode, __purpose, __dateofbill, __amount, __piva, __userId, __state, __id) {
         this.fiscalcode = __fiscalcode
         this.purpose = __purpose
         this.dateofbill = __dateofbill
         this.amount = __amount
         this.piva = __piva
         this.userId = __userId
+        this.state = __state
         this.id = __id
         this.bill = document.querySelector('.bill').cloneNode(true)
         this.getBills()
@@ -40,11 +43,24 @@ class Fatture {
         this.selectAndWrite(this.bill, '#amount', this.amount + '$', "Amount: ")
         this.selectAndWrite(this.bill, '#piva', this.piva, "VAT: ")
         let display = document.querySelector('#billContainer')
+        this.checkStatus()
 
         this.bill.classList.add('deleatable')//class for letting us to delete the card except for the dummy 
         display.append(this.bill)
 
+    }
 
+
+
+    checkStatus() {
+        let label = this.bill.querySelector('#label')
+        if (this.state == 1) {
+            label.classList.add('toManage')
+            label.textContent = 'TO MANAGE'
+        } else {
+            label.classList.add('managed')
+            label.textContent = 'MANAGED'
+        }
     }
 
     getUserName() {
@@ -52,11 +68,13 @@ class Fatture {
         fetch(apiUtenti + '/' + this.userId)
             .then(res => res.json())
             .then(dati => {
-                let nome = `${dati.firstname + dati.lastname}`
                 this.selectAndWrite(this.bill, '#firstname', `${dati.firstname + ' ' + dati.lastname}`, 'Name: ')
             })
     }
 }
+
+let labels = document.querySelectorAll('#label')
+labels.forEach(label => label.addEventListener('click', () => { console.log('ciao') }))
 
 async function getData() {
     /*  let utenti = await fetch(apiUtenti).then(res => res.json())
@@ -64,49 +82,84 @@ async function getData() {
     let [utenti, fatture] = await Promise.all([fetch(apiUtenti).then(res => res.json()), fetch(apiUtentiFatture).then(res => res.json())])
     console.log(utenti, fatture);
     let yeartotalamount = []
-    let sketchYears = fatture.map((i) => i.dateofbill.slice(0,-6)).sort((a,b) => a-b) // take date from bill and then we slice day and month value and we order them 
+    let sketchYears = fatture.map((i) => i.dateofbill.slice(0, -6)).sort((a, b) => a - b) // take date from bill and then we slice day and month value and we order them 
     let years = [...new Set(sketchYears)] //(Set is a collection of unique values.) the new Set will implicitly remove duplicate elements 
     console.log(years)
     years.forEach(anno => {
         let yearAmount = 0
-        for (let fattura of fatture) {  
-            if (fattura.dateofbill.slice(0,-6) == anno) {
+        for (let fattura of fatture) {
+            if (fattura.dateofbill.slice(0, -6) == anno) {
                 yearAmount += parseInt(fattura.amount)
             }
         }
         yeartotalamount.push(yearAmount)
     });
     for (let fattura of fatture) {
-        new Fatture(fattura.fiscalcode, fattura.purpose, fattura.dateofbill, fattura.amount, fattura.piva, fattura.userId, fattura.id)
+        new Fatture(fattura.fiscalcode, fattura.purpose, fattura.dateofbill, fattura.amount, fattura.piva, fattura.userId, fattura.state, fattura.id)
 
     }
-
     creaGrafico(years, yeartotalamount)
 
-    /* let allUser = utenti.map((i) => i.firstname + ' ' + i.lastname)
 
-    fatture = fatture.map((f) => {
-        let user = utenti.find((u) => u.id == f.userId)
-        f['user'] = user
-        return f
-    })
-    console.log(fatture);
-
-    let totalAmountUser = []
-    for (let utente of utenti) {
-        let idUser = utente.id
-        let userAmount = 0
-        for (let bill of fatture) {
-            if (bill.userId == idUser) {
-                userAmount += parseInt(bill.amount)
+    let labels = document.querySelectorAll('.labelofcard')
+    labels.forEach(label => label.addEventListener('click', function switchstato() {
+        let stato = label.textContent
+        let billId = label.parentNode.querySelector('h5').textContent.slice(9)
+        console.log(billId)
+        let questafattura = fatture.find(i => i.id == billId)
+        let newState = 0
+        if (stato == 'TO MANAGE') {
+            newState = 2
+            stato = 'MANAGED'
+        } else {
+            newState = 1
+            stato = 'TO MANAGE'
+        }
+        questafattura.state = newState
+        let options = {
+            method: 'PUT',
+            body: JSON.stringify(questafattura),
+            headers: {
+                "content-type": "application/json"
             }
         }
-        totalAmountUser.push(userAmount)
-    }
-    creaGrafico(allUser, totalAmountUser) */
-}
+        fetch(apiUtentiFatture + '/' + billId, options)//
+            .then(res => res.json())
+            .then(res => {
+                console.log(res.status)
+                swal({
+                    icon: 'success',
+                    title: 'Updated!',
+                    text: `The status of the bill n°${res.id} has been correctly updated!`,
+                    timer: 5000,
+                }).then(() => location.href = 'bills.html')
+            })
+    }));
 
+}
 getData()
+
+/* let allUser = utenti.map((i) => i.firstname + ' ' + i.lastname)
+
+fatture = fatture.map((f) => {
+    let user = utenti.find((u) => u.id == f.userId)
+    f['user'] = user
+    return f
+})
+console.log(fatture);
+
+let totalAmountUser = []
+for (let utente of utenti) {
+    let idUser = utente.id
+    let userAmount = 0
+    for (let bill of fatture) {
+        if (bill.userId == idUser) {
+            userAmount += parseInt(bill.amount)
+        }
+    }
+    totalAmountUser.push(userAmount)
+}
+creaGrafico(allUser, totalAmountUser) */
 
 let search = document.querySelector('#searchInput')
 
@@ -137,14 +190,38 @@ let orderByName = document.querySelector('#orderByName')
 let btnSearchRange = document.querySelector('#formRange')
 btnSearchRange.addEventListener('click', order)
 
+function validate(form) {
+    console.log(form)
+
+    if (form.datefromto.value == "") {
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: "Please provide a valid date!",
+        })
+        return false;
+    }
+    if (form.dateto.value == "") {
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: "Please provide a valid date!",
+        })
+        return false;
+    }
+    return (true);
+}
+/* validate(fromtofilter) */
+
 function order() {
-    let billList = document.querySelectorAll('.deleatable')
+    function deleteall() {
+        let billList = document.querySelectorAll('.deleatable')
+        billList.forEach(item => {
+            item.remove()
+        })
+    }
     what = this.dataset.btn
     console.log(this.dataset.btn);
-    billList.forEach(item => {
-        item.remove()
-    })
-
     fetch(apiUtentiFatture)
         .then(res => res.json())
         .then(datiFatture => {
@@ -154,6 +231,7 @@ function order() {
                 }
             }
             if (what == 'dateDown') {
+                deleteall()
                 datiFatture.sort(function (a, b) {
                     let dateA = new Date(a.dateofbill);
                     let dateB = new Date(b.dateofbill);
@@ -161,6 +239,7 @@ function order() {
                 })
                 doBills()
             } else if (what == 'dateUp') {
+                deleteall()
                 datiFatture.sort(function (a, b) {
                     let dateA = new Date(a.dateofbill);
                     let dateB = new Date(b.dateofbill);
@@ -168,16 +247,19 @@ function order() {
                 })
                 doBills()
             } else if (what == 'amountDown') {
+                deleteall()
                 datiFatture.sort(function (a, b) {
                     return a.amount - b.amount
                 })
                 doBills()
             } else if (what == 'amountUp') {
+                deleteall()
                 datiFatture.sort(function (a, b) {
                     return b.amount - a.amount
                 })
                 doBills()
-            } else {
+            } else if (validate(fromtofilter) == true) {
+                deleteall()
                 let arrRanges = document.querySelectorAll('.searchRange')
                 console.log(arrRanges[0].value, arrRanges[1].value)
                 let dateRange = []
@@ -244,3 +326,4 @@ function creaGrafico(dataX, dataY) {
     });
 
 }
+
