@@ -16,12 +16,10 @@
 
 <body>
 
-  <div id="main-container">
-
     <header class="py-3 mb-4 border-bottom ">
       <div class="container d-flex flex-wrap justify-content-center">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <i class="bi bi-building text-secondary fs-2"></i>
+          <i class="bi bi-building fs-2"></i>
           <span class="fs-4 mx-2">User Management</span>
         </a>
 
@@ -34,6 +32,12 @@
       </div>
     </header>
 
+    <div class="container">
+      <input class="container_toggle" type="checkbox" id="switch" name="mode">
+      <label for="switch">Light/Dark</label>
+  </div>
+    <div id="main-container">
+
     <a id="stickybtn" href="#" class="btn fw-semibold"><i class="fa-solid fa-caret-up"></i></a>
 
     <div class="container d-none" id="chartContainer">
@@ -43,27 +47,27 @@
 
       <div class="d-none" id="cardTemplate">
         <div class="container mt-4 ">
-          <div class="card mb-5 border-1 border-secondary" style="width: 18rem;">
+          <div class="card mb-5 usersCard" style="width: 18rem;">
             <img src="" class="card-img-top m-auto my-2 w-25 " alt="">
-            <div class="card-body  text-secondary ">
+            <div class="card-body">
               <h5 class="card-title ">
                 <!-- Nickname -->
               </h5>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item border-1 border-secondary">
+              <li class="list-group-item ">
                 <!-- f name -->
               </li>
-              <li class="list-group-item border-1 border-secondary">
+              <li class="list-group-item ">
                 <!-- l name -->
               </li>
-              <li class="list-group-item border-1 border-secondary">
+              <li class="list-group-item">
                 <!-- gender -->
               </li>
-              <li class="list-group-item border-1 border-secondary">
+              <li class="list-group-item ">
                 <!-- mail -->
               </li>
-              <li class="list-group-item border-1 border-secondary">
+              <li class="list-group-item ">
                 <!-- birthday -->
               </li>
               <li class="list-group-item m-auto">
@@ -87,6 +91,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/delete.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/theme.js"></script>
 </body>
 
 

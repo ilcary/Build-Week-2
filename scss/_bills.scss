@@ -1,22 +1,14 @@
-.d-grid {
-    background-color: $prussian-blue;
+//selettore range date
+.d-grid {  
+    background-color: var(--graphics);
 }
 
-#stickybtn,
+// bottoni ordinamento
+#stickybtn, 
 #formRange,
 .orderBy,
 #orderByName {
-    background-color: $copper-red;
-}
-
-canvas#myChart {
-    background-color: $prussian-blue;
-}
-
-@media screen and (max-width: 767px) {
-    #chartContainer {
-        display: none;
-    }
+    background-color: var(--details);
 
 }
 
@@ -31,6 +23,7 @@ canvas#myChart {
     #stickybtn {
         display: none;
     }
+
 
 }
 
@@ -52,8 +45,15 @@ canvas#myChart {
 }
 
 
+}
+
+
+//card Bills
+#billContainer .card::after {
+
 /* STATUS = DA GESTIRE / TO MANAGE */
 .labelofcard.toManage {
+
     position: absolute;
     z-index: 4;
     /*  content: 'TO MANAGE'; */
@@ -63,6 +63,22 @@ canvas#myChart {
     color: white;
     text-align: center;
     box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
+
+}
+
+#cardBill {
+    border-top: 1px solid var(--input);
+
+    #fiscalcode,
+    #firstname,
+    #piva,
+    #amount,
+    #dateofbill,
+    #purpose {
+        color: $charcoal2;
+    }
+}
+
 
     :hover {
         cursor: grab;
@@ -82,3 +98,4 @@ canvas#myChart {
     text-align: center;
     box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
 }
+

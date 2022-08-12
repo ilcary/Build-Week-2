@@ -15,13 +15,17 @@
 </head>
 
 <body>
+  
+
+
+
 
   <div id="main-container">
 
     <header class=" py-3 mb-4 border-bottom">
       <div class="container d-flex flex-wrap justify-content-center">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <i class="bi bi-person-plus-fill fs-2 text-secondary"></i>
+          <i class="bi bi-person-plus-fill fs-2 "></i>
           <span class="fs-4 mx-2">Create users</span>
         </a>
 
@@ -32,6 +36,9 @@
       </div>
     </header>
 
+    <input class="container_toggle" type="checkbox" id="switch" name="mode">
+    <label for="switch">Toggle</label>
+
 
 
     <form name="creazioneUtente" id="c">
@@ -39,23 +46,23 @@
         <div class="row">
 
           <div class="col-4">
-            <label for="username" class="text-white">Nickname</label>
+            <label for="username">Nickname</label>
             <input name="username" type="text" class="form-control" id="username" placeholder="nickname">
           </div>
           <div class="col-4">
-            <label for="btd" class="text-white">Date of birth</label>
+            <label for="btd">Date of birth</label>
             <input name="dateofbirth" type="date" class="form-control" id="btd" placeholder="Date of birth">
           </div>
           <div class="col-4">
-            <label for="firstname" class="text-white">First name</label>
+            <label for="firstname">First name</label>
             <input name="firstname" type="text" class="form-control" id="firstname" placeholder="firstname">
           </div>
           <div class="col-4">
-            <label for="lastname" class="mt-3 text-white">Last name</label>
+            <label for="lastname" class="mt-3">Last name</label>
             <input name="lastname" type="text" class="form-control" id="lastname" placeholder="lastname">
           </div>
           <div class="col-4">
-            <label for="gender" class="mt-3 text-white">Gender</label>
+            <label for="gender" class="mt-3">Gender</label>
             <select class="form-control" id="gender">
               <option>Male</option>
               <option>Female</option>
@@ -63,11 +70,11 @@
             </select>
           </div>
           <div class="col-4">
-            <label for="email" class="mt-3 text-white">Email</label>
+            <label for="email" class="mt-3">Email</label>
             <input name="email" type="text" class="form-control" id="email" placeholder="email">
           </div>
 
-          <button class="btn btn-secondary mt-3 w-50 m-auto" id="create">Salva</button>
+          <button class="btn mt-3 w-50 m-auto" id="create">Salva</button>
 
         </div>
       </div>
@@ -77,6 +84,7 @@
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="js/create.js"></script>
+  <script src="./js/theme.js"></script>
 </body>
 
 </html>
