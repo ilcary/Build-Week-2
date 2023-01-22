@@ -4,9 +4,9 @@ let button = document.querySelector('#create');
 
 
 class Utente {
-    constructor(__username, __bio, __firstname, __lastname, __gender, __email, __profileURL) {
+    constructor(__username, __btd, __firstname, __lastname, __gender, __email, __profileURL) {
         this.username = __username;
-        this.bio = __bio;
+        this.btd = __btd;
         this.firstname = __firstname;
         this.lastname = __lastname;
         this.gender = __gender;
@@ -15,49 +15,136 @@ class Utente {
         this.takeForm()
 
     }
-     takeForm(){
-    this.username = document.querySelector('#username').value
-    this.bio = document.querySelector('#bio').value
-    this.firstname = document.querySelector('#firstname').value
-    this.lastname = document.querySelector('#lastname').value
-    this.gender = document.querySelector('#gender').value
-    this.email = document.querySelector('#email').value
-    this.checkgender()
-}
-checkgender(){
-    if (document.querySelector('#gender').value == 'Male') {
-        this.profileURL= "img/male.png"
-    }else if(document.querySelector('#gender').value == 'Female'){
-        this.profileURL= "img/female.png" 
-    }else{
-        this.profileURL= "img/helicopter.png"
+    takeForm() {
+        this.username = document.querySelector('#username').value
+        this.btd = document.querySelector('#btd').value
+        this.firstname = document.querySelector('#firstname').value
+        this.lastname = document.querySelector('#lastname').value
+        this.gender = document.querySelector('#gender').value
+        this.email = document.querySelector('#email').value
+        this.checkgender()
+    }
+    checkgender() {
+        if (document.querySelector('#gender').value == 'Male') {
+            this.profileURL = "img/icons8-batman-vecchio-480.png"
+        } else if (document.querySelector('#gender').value == 'Female') {
+            this.profileURL = "img/icons8-wonder-woman-480.png"
+        } else {
+            this.profileURL = "img/icons8-capitan-america-480.png"
+        }
     }
 }
+
+function validate(form) {
+    console.log(form)
+
+    if (form.username.value == "") {
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: "Please provide your Nickname!",
+        })
+        form.username.focus();
+        return false;
+    }
+    if (form.dateofbirth.value == "") {
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: "Please provide your date of birth!",
+        })
+        form.dateofbirth.focus();
+        return false;
+    }
+    if (form.firstname.value == "") {
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: "Please provide your first name!",
+        })
+        form.firstname.focus();
+        return false;
+    }
+    if (form.lastname.value == "") {
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: "Please provide your last name!",
+        })
+        form.lastname.focus();
+        return false;
+    }
+    var emailID = form.email.value;
+    atpos = emailID.indexOf("@");
+    dotpos = emailID.lastIndexOf(".");
+    if (atpos < 1 || (dotpos - atpos < 2)) {
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: "Please enter correct email",
+        })
+        form.email.focus();
+        return false;
+    }
+    return (true);
 }
 
-button.addEventListener('click',function(e){
+
+
+
+
+
+button.addEventListener('click', function (e) {
     e.preventDefault();
 
-    let user = new Utente(username, bio, firstname, lastname, gender, email);
+    if (!(validate(creazioneUtente)))
+        return
+
+    let user = new Utente(username, btd, firstname, lastname, gender, email);
 
     let options = {
         method: 'POST',
         body: JSON.stringify(user),
-        headers:{
-            "content-type":"application/json"
+        headers: {
+            "content-type": "application/json"
         }
     }
-    
-    fetch(apiUtenti,options)//
-    .then(res => res.json())
-    .then(res => {
-        swal({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Good job bro a new user has been created!',
-            text:`The user ${res.firstname} ${res.lastname} with id: ${res.id} has been created!`,
-            showConfirmButton: false,
-            timer: 5000
-        }).then(() => location.href = 'index.html')
-    })
+
+    fetch(apiUtenti, options)//
+        .then(res => res.json())
+        .then(res => {
+            swal({
+                icon: 'success',
+                title: 'Good job bro a new user has been created!',
+                text: `The user ${res.firstname} ${res.lastname} with id: ${res.id} has been created!`,
+                showConfirmButton: false,
+                timer: 5000
+            }).then(() => location.href = 'index.html')
+        })
+
 })
+
+
+
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+}
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    }
+    else {        document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+    }    
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
